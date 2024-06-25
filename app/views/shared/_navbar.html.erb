@@ -1,4 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar-small navbar-text navbar-toggler">
+  <%= link_to "Regístrate", new_user_registration_path, class: "nav-item" %>
+  <%= link_to "Ingresa", new_user_session_path, class: "nav-item" %>
+</div>
+<div class="navbar navbar-expand-sm navbar-transparent navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>

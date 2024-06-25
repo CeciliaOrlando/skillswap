@@ -1,3 +1,16 @@
+.navbar-small {
+  background: #5D3277;
+  color: #E0E0E0;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  align-items: center;
+  height: 40px;
+}
+
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
