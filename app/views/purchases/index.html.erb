@@ -1,2 +1,31 @@
-<h1>Purchases#index</h1>
-<p>Find me in app/views/purchases/index.html.erb</p>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="card card-width container mt-4">
+<h1>My Purchases</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>My Courses</th>
+          <th>My Purchases</th>
+          <th>My teachers</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @purchases.each do |purchase| %>
+          <tr>
+            <td><%= purchase.course.name %></td>
+            <td><%= purchase.course.user.first_name %></td>
+            <td><%= purchase.course.user.first_name %> <%= purchase.course.user.last_name %></td>            <td><%= purchase.course.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <div class="col-8"></div>
+      <div class="col-4">
+        <%= link_to "Back to courses", courses_path, class: "btn btn-dark btn-sm text-decoration-none" %>
+    </div>
+</div>
+</div>
+</div>
