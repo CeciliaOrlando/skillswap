@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :purchases, only: [:new, :create] # nesting solo new y create
   end
   resources :purchases, only: [:index, :show]
-  resources :events 
+  resources :events
 end
