@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :events
   has_many :purchases
   has_many :courses_as_student, through: :purchases, source: :course # usuario comprador de cursos (estudiante)
+  has_one_attached :photo
+
 end
