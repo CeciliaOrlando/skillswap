@@ -1,2 +1,14 @@
 <h1>Courses#show</h1>
 <p>Find me in app/views/courses/show.html.erb</p>
+<p><%= @course.name %></p>
+<p><%= @course.description %></p>
+<p>$<%= @course.price %></p>
+
+<%= link_to 'Atrás', courses_path %>
+<%= link_to 'Inscribirme'%>
+
+<p><% if current_user == @course.user %>
+  <%= link_to 'Editar Curso', edit_course_path(@course) %>
+  <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' } %>
+  <%= link_to 'Añadir Nuevo Curso', new_course_path(@course) %>
+<% end %></p>
