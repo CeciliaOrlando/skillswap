@@ -19,37 +19,9 @@
   </div>
 </div>
 
-
-<div class="cards-container">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="d-flex">
-        <% @courses.first(4).each do |course| %>
-         <div class="card-swap">
-          <a href="#">
-            <img src="<%= asset_path('card_01.jpg') %>" alt="Card image cap">
-          </a>
-          <div class="card-body">
-            <h5 class="card-title"><%= course.name %></h5>
-            <div class="stats-line"></div>
-            <div class="card-stats">
-              <div class="stats-item">
-                <i class="fas fa-users"></i> 200
-              </div>
-              <div class="stats-item">
-                <i class="fas fa-book-open"></i> 50
-              </div>
-              <div class="stats-item">
-                <i class="fas fa-dollar-sign"></i> $<%= course.price %>
-              </div>
-                </div>
-          </div>
-        </div>
-        <% end %>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="row">
+    <%= render partial: "courses/course", collection: @courses %>
   </div>
 </div>
 
