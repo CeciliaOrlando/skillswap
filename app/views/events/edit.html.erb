@@ -1,2 +1,15 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+
+
+  <h2>EDITAR EVENTO</h2>
+
+  <%= simple_form_for @event do |form| %>
+    <%= form.input :name, label: 'Título del Evento' %>
+    <%= form.input :event_date, label: 'Fecha', as: :date %>
+    <%= form.input :description, label: 'Descripción', as: :text %>
+    <%= form.input :price, label: 'Precio' %>
+
+      <%= form.submit 'Actualizar Evento'%>
+      <%= link_to 'Atrás', events_path %>
+
+  <% end %>
+
