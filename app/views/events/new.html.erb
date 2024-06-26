@@ -1,7 +1,7 @@
 
   <h2>CREAR NUEVO EVENTO</h2>
 
-  <%= simple_form_for @event  do |form| %>
+  <%= simple_form_for @event do |form| %>
     <%= form.input :name, label: 'Título del Evento' %>
     <%= form.input :event_date, label: 'Fecha', as: :date %>
     <%= form.input :description, label: 'Descripción', as: :text %>

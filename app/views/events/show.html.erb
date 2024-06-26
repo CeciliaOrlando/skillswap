@@ -1,10 +1,13 @@
-<h1>EVENTO INDIVIDUAL</h1>
-<p><p><%= @event.name %></p>
-<p><%= @event.description %></p>
-<p>$<%= @event.price %></p>
-<%= link_to 'Atrás', events_path %>
 
-<% if current_user == @event.user %>
-  <%= link_to 'Editar Evento', edit_course_path(@event) %>
-  <%= link_to 'Borrar Evento', course_path(@event), method: :delete, data: { confirm: 'Estas segura?' } %>
-<% end %>
+
+  <h1>EVENTO</h1>
+
+  <p><p><%= @event.name %></p>
+  <p><%= @event.description %></p>
+  <p>$<%= @event.price %></p>
+  <%= link_to 'Atrás', events_path %>
+
+  <% if current_user == @event.user %>
+    <%= link_to 'Editar Evento', edit_event_path(@event) %>
+    <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
+  <% end %>

@@ -33,10 +33,10 @@ class EventsController < ApplicationController
 
   # localhost:3000/events/1
   def update
-    if @event = Event.update(event_params) # ntenta actualizar los atributos   de la academia con los parámetros permitidos por academy_params.
+    if @event.update(event_params) # ntenta actualizar los atributos de eventos con los parámetros permitidos por academy_params.
       redirect_to @event, notice: 'Evento actualizado exitosamente.' # si actualizacion es correcta redireciona a la vista del evento
     else # pero si hay error vuelve al formulario asi corrije el error
-       render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
 
   private
 
-  def event_params 
+  def event_params
     params.require(:event).permit(:name, :description, :date, :price, :status) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
   end
 
