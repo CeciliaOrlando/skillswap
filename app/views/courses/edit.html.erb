@@ -1,2 +1,9 @@
 <h1>Courses#edit</h1>
 <p>Find me in app/views/courses/edit.html.erb</p>
+
+<p><%= simple_form_for @course, url: course_path(@course) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.submit "Update course" %>
+<% end %></p>
