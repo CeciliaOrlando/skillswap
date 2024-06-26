@@ -1,2 +1,10 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1>EVENTO INDIVIDUAL</h1>
+<p><p><%= @event.name %></p>
+<p><%= @event.description %></p>
+<p>$<%= @event.price %></p>
+<%= link_to 'Atrás', events_path %>
+
+<% if current_user == @event.user %>
+  <%= link_to 'Editar Evento', edit_course_path(@event) %>
+  <%= link_to 'Borrar Evento', course_path(@event), method: :delete, data: { confirm: 'Estas segura?' } %>
+<% end %>

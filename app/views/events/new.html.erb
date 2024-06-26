@@ -1,2 +1,15 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+
+  <h2>CREAR NUEVO EVENTO</h2>
+
+  <%= simple_form_for @event  do |form| %>
+    <%= form.input :name, label: 'Título del Evento' %>
+    <%= form.input :event_date, label: 'Fecha', as: :date %>
+    <%= form.input :description, label: 'Descripción', as: :text %>
+    <%= form.input :price, label: 'Precio' %>
+
+
+
+      <%= form.submit 'Crear Evento' %>
+      <%= link_to 'Atras', events_path %>
+
+  <% end %>
