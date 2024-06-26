@@ -1,2 +1,15 @@
-<h1>Purchases#new</h1>
-<p>Find me in app/views/purchases/new.html.erb</p>
+<div class="card container">
+    <%#= @course.img %>
+  <h3><%= @course.name %></h3>
+  <p><%= @course.description%></p>
+  <strong><span><%= @course.price %></span></strong>
+<%= simple_form_for [@course, @purchase] do |f| %>
+  <%= f.button :submit, "Pagar"  %>
+<% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
