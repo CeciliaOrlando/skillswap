@@ -75,3 +75,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+# Gemas del proyecto
+
+gem "dotenv-rails"
+gem "cloudinary"
