@@ -2,6 +2,11 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  position: relative;
+  width: 100%;
+  height: 900px; /* Ajusta según el tamaño del banner */
+  overflow: hidden;
+  z-index: 1;
 }
 
 .banner h1 {
@@ -19,3 +24,9 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 // Specific CSS for your home-page
+
+
+.banner img {
+  width: 100%;
+  height: auto;
+}
