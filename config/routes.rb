@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :purchases, only: [:index, :show]
   resources :events
+  get "/my_courses", to: "pages#my_courses", as: :my_courses
 end

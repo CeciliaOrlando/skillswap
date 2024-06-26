@@ -5,7 +5,10 @@
 <p>$<%= @course.price %></p>
 
 <%= link_to 'Atrás', courses_path %>
-<%= link_to 'Inscribirme'%>
+<% unless current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
+  <%= link_to 'Inscribirme', new_course_purchase_path(@course) %>
+<% end %>
+
 
 <p><% if current_user == @course.user %>
   <%= link_to 'Editar Curso', edit_course_path(@course) %>

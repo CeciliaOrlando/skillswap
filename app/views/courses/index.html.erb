@@ -1,6 +1,4 @@
 <h1>Todos los cursos</h1>
   <% @courses.each do |course| %>
-    <p><%= link_to course.name, course %></p>
+    <p><%= link_to course.id, course %></p>
   <% end %>
-
-
