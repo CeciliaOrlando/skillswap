@@ -1,4 +1,1 @@
-<h1>TODOS LOS EVENTOS </h1>
-<% @events.each do |event| %>
-    <p><%= link_to event.name, event %></p>
-  <% end %>
+<%= render @events %>
