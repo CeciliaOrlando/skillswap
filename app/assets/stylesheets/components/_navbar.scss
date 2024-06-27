@@ -1,6 +1,30 @@
+.navbar-small {
+  background: #5D3277;
+  color: #E0E0E0;
+  font-size: 14px;
+  padding-left: 20px;
+  align-items: center;
+  height: 40px;
+  z-index: 10;
+}
+
+.navbar-small .nav-link {
+  color: #E0E0E0;
+}
+
+.navbar-small .nav-link:hover {
+  color: #FFFFFF;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+}
+
+.navbar-skillswap {
+  justify-content: space-between;
+  background-color: transparent;
+
 }
 
 .navbar-lewagon .navbar-collapse {

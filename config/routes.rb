@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :purchases, only: [:new, :create] #para eventos nesting
   end
   resources :purchases, only: [:index, :show]
+  get "/my_courses", to: "pages#my_courses", as: :my_courses
 end

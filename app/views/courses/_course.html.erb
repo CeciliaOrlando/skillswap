@@ -1,0 +1,22 @@
+<div class="col-3">
+  <div class="card-swap">
+    <a href="#">
+      <img src="<%= asset_path('card_01.jpg') %>" alt="Card image cap">
+    </a>
+    <div class="card-body">
+      <h5 class="card-title"><%= course.name %></h5>
+      <div class="stats-line"></div>
+        <div class="card-stats">
+          <div class="stats-item">
+            <i class="fas fa-users"></i> 200
+          </div>
+          <div class="stats-item">
+            <i class="fas fa-book-open"></i> 50
+          </div>
+          <div class="stats-item">
+            <i class="fas fa-dollar-sign"></i> $<%= course.price %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

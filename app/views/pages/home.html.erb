@@ -1,2 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# banner %>
+
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner_01.jpg') %>);">
+  <div class="container">
+    <h1>Encuentra miles de <strong>cursos</strong> para que <strong>sigas creciendo</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+
+<%# cards container %>
+
+<div class="container-xl">
+  <div class="row justify-content-center text-left">
+    <div class="col-12 col-md-10">
+      <h2 class="">Cursos destacados</h2>
+      <h5>Aprendizaje sin límites!</h5>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <%= render partial: "courses/course", collection: @courses %>
+  </div>
+</div>
+
+<%# fake container "register now" %>
+
+<div class="register-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner_01.jpg') %>);">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2>Regístrate ahora!</h2>
+      <p>¡No te pierdas la oportunidad de aprender algo nuevo!</p>
+      <a class="btn btn-flat" href="#">Regístrate</a>
+    </div>
+  </div>
+</div>
+</div>
