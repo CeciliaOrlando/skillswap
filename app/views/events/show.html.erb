@@ -1,13 +1,25 @@
+<div class="container mt-5 shadow border bg-white">
+  <div class= row>
+    <div class= "col-6 ">
+      <img src="https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+      </div>
+
+      <div class="col-6 ">
 
 
-  <h1>EVENTO</h1>
+          <p><h1><%= @event.name %></h1>
+          <p><%= @event.description %></p>
+          <p>$<%= @event.price %></p>
 
-  <p><p><%= @event.name %></p>
-  <p><%= @event.description %></p>
-  <p>$<%= @event.price %></p>
-  <%= link_to 'Atrás', events_path %>
+          <%= link_to 'Atrás', events_path %>
 
-  <% if current_user == @event.user %>
-    <%= link_to 'Editar Evento', edit_event_path(@event) %>
-    <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
-  <% end %>
+
+        <% if current_user == @event.user %>
+          <%= link_to 'Editar Evento', edit_event_path(@event) %>
+          <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
+          <%= link_to 'Crear Evento', event_path(@event)%>
+        <% end %>
+
+      </div>
+    </ div>
+</div>
