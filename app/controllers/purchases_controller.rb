@@ -9,7 +9,11 @@ class PurchasesController < ApplicationController
 
   def new
     @purchase = Purchase.new
-    @course = Course.find(params[:course_id])
+    if params[:course_id]
+      @course = Course.find(params[:course_id])
+    else
+      @event = Event.find(params[:event_id])
+    end
   end
 
   def create
