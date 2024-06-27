@@ -1,9 +1,15 @@
 <!-- Button trigger modal -->
 <div class="card container mt-5">
+ <% if params.key?(:course_id) %>
     <%#= @course.img %>
     <h3><%= @course.name %></h3>
     <p><%= @course.description %></p>
     <strong><span><%= @course.price %></span></strong>
+ <% else %>
+    <h3><%= @event.name %></h3>
+    <p><%= @event.description %></p>
+    <strong><span><%= @event.price %></span></strong>
+ <% end %>
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
 Pagar
 </button>
@@ -13,7 +19,7 @@ Pagar
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><%= @course.name %></h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><%= params.key?(:course_id)  ? @course.name  : @event.name %></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
