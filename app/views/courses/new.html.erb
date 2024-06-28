@@ -1,11 +1,21 @@
-<h1>Courses#new</h1>
-<p>Find me in app/views/courses/new.html.erb</p>
 
-<p><%= simple_form_for @course, url: courses_path do |f| %>
-  <%= f.input :name, label: "Nombre del curso" %>
-  <%= f.input :description, label: "Descripción del curso" %>
-  <%= f.input :price, label: "Precio" %>
-  <%= f.submit "Crear nuevo curso" %>
-<% end %></p>
+  <h2>Crear Nuevo Curso</h2>
 
-<p><%= link_to "Atrás", courses_path %></p>
+<div class="courses-container mt-5 p-5 shadow border bg-white ">
+  <div class="row">
+    <div class="col-6">
+      <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600" alt="course_image_cap">
+    </div>
+    <div class="col-6 ">
+    <p>
+      <%= simple_form_for @course, url: courses_path do |f| %>
+        <%= f.input :name, label: "Nombre del curso" %>
+        <%= f.input :description, label: "Descripción del curso" %>
+        <%= f.input :price, label: "Precio" %>
+        <%= f.submit "Crear nuevo curso", class: 'btn btn-flat' %>
+      <% end %>
+    </p>
+    <p><%= link_to "Atrás", courses_path, class:"btn btn-flat" %></p>
+    </div>
+  </div>
+</div>
