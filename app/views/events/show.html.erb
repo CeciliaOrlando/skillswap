@@ -2,11 +2,11 @@
   <div class= row>
     <div class= "col-6 ">
       <img src="https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-      </div>
+    </div>
 
-        <div class="col-6 ">
+    <div class="col-6 ">
 
-           <%= turbo_frame_tag "test" do %>
+      <%= turbo_frame_tag "test" do %>
 
 
             <p><h1><%= @event.name %></h1>
@@ -16,15 +16,16 @@
 
             <%= link_to 'Atrás', events_path, data: {turbo: false}%>
 
-          </turbo-frame>
+
 
           <% if current_user == @event.user %>
-          <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"} %>
-          <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
+            <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"} %>
+            <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
+          <% end %>
 
-         <% end %>
-        </div>
+
+
       <% end %>
     </div>
- </div>
+  </div>
 </div>
