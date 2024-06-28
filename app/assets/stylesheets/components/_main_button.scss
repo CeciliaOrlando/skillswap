@@ -1,0 +1,14 @@
+.btn-flat {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #333333;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #FFD700;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #d6b601;
+  color: #333333;
+}
