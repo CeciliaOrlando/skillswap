@@ -1,14 +1,29 @@
-  <h2>CREAR NUEVO EVENTO</h2>
-
-  <%= simple_form_for @event do |form| %>
-    <%= form.input :name, label: 'Título del Evento' %>
-    <%= form.input :event_date, label: 'Fecha', as: :date %>
-    <%= form.input :description, label: 'Descripción', as: :text %>
-    <%= form.input :price, label: 'Precio' %>
 
 
+<div class="event-container mt-5 shadow border bg-white">
 
-    <%= form.submit 'Crear Evento' %>
-    <%= link_to 'Atras', events_path %>
+  <div class= row>
+    <div class= "col-6 ">
+      <img src="https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+    </div>
 
-  <% end %>
+    <div class="col-6 ">
+
+        <h2>CREAR NUEVO EVENTO</h2>
+
+        <%= simple_form_for @event do |form| %>
+          <%= form.input :name, label: 'Título del Evento' %>
+          <%= form.input :event_date, label: 'Fecha', as: :date %>
+          <%= form.input :description, label: 'Descripción', as: :text %>
+          <%= form.input :price, label: 'Precio' %>
+
+
+            <%= form.submit 'Crear Evento' %>
+            <%= link_to 'Atras', events_path %>
+
+
+        <% end %>
+      </div>
+    </div>
+</div>
+
