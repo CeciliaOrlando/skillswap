@@ -12,6 +12,10 @@ body {
   font-size: 30px;
 }
 
+.banner-container {
+  display: flex;
+  justify-content: center; /* Centra el contenedor horizontalmente */
+}
 
 .banner-home {
   background-size: cover;
@@ -72,7 +76,7 @@ body {
 }
 
 .register-container h1 {
-  margin: 0;
+  margin: 10px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
