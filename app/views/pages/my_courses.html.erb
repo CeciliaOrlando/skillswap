@@ -1,14 +1,29 @@
-<h1>My Courses</h1>
-<br>
-<h1>As Teacher</h1>
-<p><% @courses_as_teacher.each do |course| %>
-  <%= link_to course.name, course %>
-<% end %></p>
+<div class="mycourses-container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h1 id="home-banner">Mis Cursos</h1>
+      <br>
+      <h2>Docente </h2>
+      <div class="row">
+        <% @courses_as_teacher.each do |course| %>
+          <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <%= render partial: "courses/course", locals: { course: course } %>
+          </div>
+        <% end %>
+      </div>
 
-<h1>As Student</h1>
-<p><% @courses_as_student.each do |course| %>
-  <%= link_to course.name, course %>
-<% end %></p>
+      <h2>Estudiante</h2>
+      <div class="row">
+        <% @courses_as_student.each do |course| %>
+          <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <%= render partial: "courses/course", locals: { course: course } %>
+          </div>
+        <% end %>
+      </div>
 
-<%= link_to 'Volver a cursos', courses_path %>
-g
+      <div class="text-center mt-4">
+        <%= link_to 'Volver a cursos', courses_path, class: 'btn btn-flat' %>
+      </div>
+    </div>
+  </div>
+</div>
