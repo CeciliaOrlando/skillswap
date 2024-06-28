@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<div class="card container mt-5">
+<div class="card-modal-container mt-5">
  <% if params.key?(:course_id) %>
     <%#= @course.img %>
     <h3><%= @course.name %></h3>
@@ -33,7 +33,7 @@ Pagar
         <h1>Información de pago</h1>
     </div>
     <div class="d-flex">
-    <div class="container preload">
+    <div class="card-modal-container preload">
         <div class="creditcard">
             <div class="front">
                 <div id="ccsingle"></div>
@@ -163,26 +163,9 @@ Pagar
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Pagar</button>
+        <button type="button" class="btn btn-flat">Pagar</button>
       </div>
     </div>
   </div>
 </div>
 <!-- FIN Modal -->
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-
-
-</script>

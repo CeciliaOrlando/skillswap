@@ -1,4 +1,5 @@
 # seeds.rb
+require 'open-uri'
 
 # Limpiar la base de datos antes de ejecutar los seeds en desarrollo
 if Rails.env.development?
@@ -8,6 +9,38 @@ if Rails.env.development?
   Event.destroy_all     # También eliminar todos los eventos
   User.destroy_all      # Finalmente eliminar todos los usuarios
 end
+
+#usuarios de compañeras
+
+puts "Creando usuarios"
+
+#CECILIA
+user_1 = User.create!(email: 'cecilia@gmail.com', password: '123456', first_name: 'Cecilia', last_name: 'Orlando')
+file = URI.open("https://avatars.githubusercontent.com/u/168267241?v=4")
+user_1.photo.attach(io: file, filename: "cecilia.png", content_type: "image/png")
+user_1.save
+
+#ALEJANDRA
+user_2 = User.create!(email: 'alejandra@gmail.com', password: '123456', first_name: 'Alejandra', last_name: 'Gonzalez')
+file = URI.open("https://avatars.githubusercontent.com/u/159148776?v=4")
+user_2.photo.attach(io: file, filename: "cecilia.png", content_type: "image/png")
+user_2.save
+
+#SOFÍA
+user_3 = User.create!(email: 'sofia@gmail.com', password: '123456', first_name: 'Sofía', last_name: 'Torres')
+file = URI.open("https://avatars.githubusercontent.com/u/159148776?v=4")
+user_3.photo.attach(io: file, filename: "cecilia.png", content_type: "image/png")
+user_3.save
+
+#Luis
+user_3 = User.create!(email: 'luis@gmail.com', password: '123456', first_name: 'Luis', last_name: 'Barranzuela')
+file = URI.open("https://avatars.githubusercontent.com/u/159148776?v=4")
+user_3.photo.attach(io: file, filename: "luis.png", content_type: "image/png")
+user_3.save
+
+
+
+
 
 # Crear 8 usuarios
 users_data = [
