@@ -1,17 +1,36 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
-<p><%= @course.name %></p>
-<p><%= @course.description %></p>
-<p>$<%= @course.price %></p>
+<div class="course-container mt-5 shadow border bg-white">
+  <div class="row">
+    <div class="col-6">
+      <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600" alt="course_image_cap">
+    </div>
+    <div class="col-6">
+      <h1> <%= @course.name %> </h1>
+      <p><%= @course.description %></p>
+      <p><%= @course.price %></p>
 
-<%= link_to 'Atrás', courses_path %>
-<% unless current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
-  <%= link_to 'Inscribirme', new_course_purchase_path(@course) %>
-<% end %>
+      <p>
+        <% unless current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
+          <%= link_to 'Inscribirme', new_course_purchase_path(@course), class: "btn btn-flat" %>
+        <% end %>
+      </p>
 
 
-<p><% if current_user == @course.user %>
-  <%= link_to 'Editar Curso', edit_course_path(@course) %>
-  <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' } %>
-  <%= link_to 'Añadir Nuevo Curso', new_course_path(@course) %>
-<% end %></p>
+      <p>
+        <% referer = request.referer %>
+        <% if referer && referer.include?(my_courses_path) && current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
+          <%= link_to 'Volver a mis cursos', my_courses_path, class: 'btn btn-flat'%>
+        <% else %>
+          <%= link_to 'Volver a todos los cursos', courses_path, class: 'btn btn-flat' %>
+        <% end %>
+      </p>
+
+      <p>
+        <% if current_user == @course.user %>
+          <%= link_to 'Editar Curso', edit_course_path(@course), class: 'btn btn-flat' %>
+          <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' }, class: 'btn btn-flat' %>
+          <%= link_to 'Añadir Nuevo Curso', new_course_path(@course), class: 'btn btn-flat' %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
