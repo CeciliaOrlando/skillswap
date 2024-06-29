@@ -1,6 +1,6 @@
 <div class="container-fluid" style="background-color: #f2f2f2; padding: 20px;">
   <div class="row border d-flex ">
-  
+
     <div class="col-md-4 p-4 bg-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ">
        <!-- Fecha -->
        <%= content_tag :div, event.event_date&.strftime('%B %d, %Y'), class: 'section-content text-center text-black display-6 fw-bold' %>
@@ -18,7 +18,7 @@
          </div>
        </div>
 
-    <div class="col-md-4 my-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/4144294/pexels-photo-4144294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+    <div class="col-md-4 my-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=url_for(event.photo)%>);">
       <!--  Foto -->
     </div>
 
