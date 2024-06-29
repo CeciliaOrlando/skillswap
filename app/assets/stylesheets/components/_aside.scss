@@ -1,0 +1,17 @@
+aside{
+  width: 100%;
+  background-color: #F4F4F4;
+}
+
+$checkbox-size: 10px; // Tamaño de la casilla de verificación
+$text-size: 13px; // Tamaño de la fuente del texto
+
+input[type="checkbox"] {
+  width: $checkbox-size;
+  height: $checkbox-size;
+  vertical-align: middle; // Alinea verticalmente con el texto
+}
+
+.form-check-label {
+  font-size: $text-size;
+}
