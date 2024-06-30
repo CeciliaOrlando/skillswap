@@ -1,3 +1,11 @@
-<%= render @events %>
+<div class="event-container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Crear Evento', new_event_path(current_user), class: 'btn btn-flat' %>
 
-<%= link_to 'Crear Evento', new_event_path(current_user)%>
+        <%= render @events %>
+
+      <%= link_to 'Crear Evento', new_event_path(current_user), class: 'btn btn-flat' %>
+    </div>
+  </div>
+</div>

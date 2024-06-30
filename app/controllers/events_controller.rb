@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   # localhost:3000/events
   def index
-    @events = Event.all # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
+    @events = Event.order(event_date: :desc) # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
   end
 
   # localhotst:3000/events/1
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params) # se crea una instancia de Event utilizando los parametros permitidos en event_params
     @event.user = current_user # se asigna al usuario actual(current_user)como propietario del evento
     if @event.save # si se guarda correctamente en la base de datos es Verdadero
-      redirect_to @event, notice: 'Evento creado exitosamente.' # redirecciona a la vista del evento
+      redirect_to @event, notice: '¡Evento creado exitosamente!' # redirecciona a la vista del evento
     else # pero si hay error vuelve al formulario asi corrije el error
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
   # localhost:3000/events/1
   def update
     if @event.update(event_params) # ntenta actualizar los atributos de eventos con los parámetros permitidos por academy_params.
-      redirect_to @event, notice: 'Evento actualizado exitosamente.' # si actualizacion es correcta redireciona a la vista del evento
+      redirect_to @event, notice: '¡Evento actualizado exitosamente!' # si actualizacion es correcta redireciona a la vista del evento
     else # pero si hay error vuelve al formulario asi corrije el error
       render :edit, status: :unprocessable_entity
     end
@@ -43,13 +43,16 @@ class EventsController < ApplicationController
   # localhost:3000/events/1
   def destroy
     @event.destroy # elimina el evento de la base de datos
-    redirect_to events_path, status: :see_other, notice: "Evento eliminado con éxito!" # redirecciona a la vista de eventos y pone un mensaje de que se eliminó ok
+    respond_to do |format|
+      format.html {redirect_to events_path, status: :see_other, notice: "¡Evento eliminado con éxito!"} # redirecciona a la vista de eventos y pone un mensaje de que se eliminó ok
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@event) } # elimina el evento de la vista de eventos
+    end
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :date, :price, :status) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
+    params.require(:event).permit(:name, :description, :event_date, :price, :status) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
   end
 
   def set_event
