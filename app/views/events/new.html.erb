@@ -1,13 +1,14 @@
-<h2>CREAR NUEVO EVENTO</h2>
+<div class="event-container mt-5">
+  <h2 class="fs-4 text-secondary">CREAR NUEVO EVENTO</h2>
 
-<div class="event-container mt-5 shadow border bg-white">
+    <div class="event-container mt-5 p-5 shadow border bg-white">
 
-  <div class= row>
-    <div class= "col-6 ">
-      <img src="https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-    </div>
+        <div class= "col-6 mt-4 ">
 
-    <div class="col-6 ">
+          <img src="https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg" alt="" class="img-fluid" height="650" width="600">
+        </div>
+
+      <div class="col-6 p-4">
 
         <%= simple_form_for @event do |form| %>
           <%= form.input :name, label: 'Título del Evento' %>
@@ -15,12 +16,15 @@
           <%= form.input :description, label: 'Descripción', as: :text %>
           <%= form.input :price, label: 'Precio' %>
 
+              <div class="row d-flex justify-content-center">
 
-            <%= form.submit 'Crear Evento' %>
-            <%= link_to 'Atras', events_path %>
+                <div class="col-10 d-flex align-items-center">
+                  <span><%= form.submit 'Crear Evento', class: 'btn btn-flat' %></span><%= link_to 'Atrás', events_path, class:"btn btn-flat" %>
+                </div>
 
-
+              </div>
         <% end %>
       </div>
     </div>
+  </div>
 </div>

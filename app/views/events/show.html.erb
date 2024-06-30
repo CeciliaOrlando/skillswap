@@ -1,12 +1,13 @@
-<h1>EVENTO</h1>
+<div class="event-container mt-5">
+  <h2 class="fs-4 text-secondary">EVENTO</h2>
 
-  <div class="event-container mt-5 shadow border bg-white">
-    <div class= row>
-      <div class= "col-6 ">
-        <img src="https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+  <div class="event-container mt-5 p-5 shadow border bg-white">
+    <div class="row border d-flex">
+      <div class="col-6 mt-4">
+        <img src="https://images.pexels.com/photos/8007128/pexels-photo-8007128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img-fluid" height="650" width="600">
       </div>
 
-      <div class="col-6 ">
+      <div class="col-6 p-8">
 
         <%= turbo_frame_tag "test" do %>
 
@@ -15,15 +16,16 @@
               <p><%= @event.event_date %></p>
               <p>$<%= @event.price %></p>
 
-              <%= link_to 'Atrás', events_path, data: {turbo: false}%>
+              <%= link_to 'Atrás', events_path, data: {turbo: false}, class: 'btn btn-flat'%>
 
 
             <% if current_user == @event.user %>
-              <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"} %>
-              <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?' } %>
+              <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat' %>
+              <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat' %>
             <% end %>
 
         <% end %>
       </div>
     </div>
   </div>
+</div>
