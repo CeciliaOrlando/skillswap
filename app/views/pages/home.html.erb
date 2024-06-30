@@ -1,10 +1,45 @@
 <%# banner %>
 
-<div class="banner-home" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner_01.jpg') %>);">
+<div class="banner-home" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner_01.jpg') %>); background-color: transparent;">
   <div class="container">
-    <h1>EMPODERATE</strong>!</h1>
     <p>transforma tu mundo con <strong>Skill Swap!</strong></p>
+    <h1>EMPODERATE</strong>!</h1>
     <%= link_to "EMPIEZA AHORA", "#", class: "btn btn-flat" %>
+  </div>
+  <div class="widget-container d-flex mt-5 p-5 align-items-center">
+<div class="widget p-5 mt-5">
+  <div class="d-flex">
+    <div style="width:40px; height:40px; margin-right:10px; display:flex; justify-content:center; align-items:center; color:#FFD700; border-radius:50%;">
+      <span class="fa fa-lightbulb"></span>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+      <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
+      <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+    </div>
+  </div>
+</div>
+<div class="widget p-5 mt-5">
+  <div class="d-flex">
+    <div style="width:40px; height:40px; margin-right:10px; display:flex; justify-content:center; align-items:center; color:#FFD700; border-radius:50%;">
+      <span class="fa fa-lightbulb"></span>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+      <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
+      <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+    </div>
+  </div>
+</div>
+<div class="widget p-5 mt-5">
+ <div class="d-flex">
+    <div style="width:40px; height:40px; margin-right:10px; display:flex; justify-content:center; align-items:center; color:#FFD700; border-radius:50%;">
+      <span class="fa fa-lightbulb"></span>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center;">
+      <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
+      <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
@@ -13,7 +48,7 @@
 <div class="container-xl">
   <div class="row justify-content-center text-left">
     <div class="col-12 col-md-10">
-      <h2 class="">Cursos destacados</h2>
+      <h2>Cursos destacados</h2>
       <h5>Aprendizaje sin límites!</h5>
     </div>
   </div>
@@ -31,18 +66,10 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h1>Regístrate ahora!</h2>
-        <p>¡No te pierdas la oportunidad de aprender algo nuevo!</p>
+        <p>¡No pierdas la oportunidad de aprender algo nuevo!</p>
+        <h1>Regístrate ahora!</h1>
         <%= link_to "REGISTRATE", "#", class: "btn btn-flat" %>
       </div>
     </div>
-  </div>
-</div>
-
-<%# footer %>
-
-<div class="footer-container">
-  <div class="row">
-    <%= render partial: "shared/footer" %>
   </div>
 </div>

@@ -1,9 +1,19 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<h1>Edita tu curso</h1>
 
-<p><%= simple_form_for @course, url: course_path(@course) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.submit "Update course" %>
-<% end %></p>
+<div class="course-container mt-5 p-5 shadow border bg-white ">
+  <div class="row">
+    <div class="col-6">
+      <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600" alt="course_image_cap">
+    </div>
+    <div class="col-6">
+      <p>
+        <%= simple_form_for @course, url: course_path(@course) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.submit "Actualizar Curso", class:'btn btn-flat' %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
