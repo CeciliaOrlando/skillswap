@@ -1,16 +1,18 @@
 <!-- Button trigger modal -->
-<div class="card-modal-container">
+<div class="course-container">
  <% if params.key?(:course_id) %>
     <%#= @course.img %>
+    <img src="https://images.pexels.com/photos/3194524/pexels-photo-3194524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" width="200">
     <h3><%= @course.name %></h3>
     <p><%= @course.description %></p>
+    <h4><%= @course.category %></h4>
     <strong><span><%= @course.price %></span></strong>
  <% else %>
     <h3><%= @event.name %></h3>
     <p><%= @event.description %></p>
     <strong><span><%= @event.price %></span></strong>
  <% end %>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#exampleModal">
 Pagar
 </button>
 </div>
@@ -33,7 +35,7 @@ Pagar
         <h1>Información de pago</h1>
     </div>
     <div class="d-flex">
-    <div class="card-modal-container preload">
+    <div class="container2 preload">
         <div class="creditcard">
             <div class="front">
                 <div id="ccsingle"></div>
