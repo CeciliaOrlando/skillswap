@@ -15,3 +15,13 @@ end
 #6) rails db:migrate
 #7) add category to courses in seeds.rb
 #8) front-end for purchases new.html.erb
+
+#9) add column 'lecture'(int) for courses-table
+#11) add column 'quiz'(int) for courses-table
+#13) add column 'duration'(string) for courses-table
+#15) add column 'language'(string) for courses-table
+#17) add column 'number_of_student'(int) for courses-table
+#19) add column 'skill'(string) for courses-table
+#21) add column 'curriculum' (text) for courses-table
+#23) add column 'assessment' (text) for courses-table
+#24) rails db:migrate
