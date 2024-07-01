@@ -3,6 +3,21 @@
     <div class="col-12">
       <%= link_to 'Crear Evento', new_event_path(current_user), class: 'btn btn-flat' %>
 
+<%# 
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#Sucediendo" data-toggle= "tab"> Sucediendo</li>
+                <li><a href="#Próximo" data-toggle= "tab" > Próximo</li>
+                <li><a href="#Caducado" data-toggle= "tab"> Caducado</li>
+            </ul>
+
+
+            <div class="tab-content">
+              <div class="tab-pane fade" id="Sucediendo"></div>
+              <div class="tab-pane fade" id="Proximo"></div>
+              <div class="tab-pane fade" id="Caducado"></div>
+            </div>
+ %>
+
         <%= render @events %>
 
       <%= link_to 'Crear Evento', new_event_path(current_user), class: 'btn btn-flat' %>

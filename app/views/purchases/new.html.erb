@@ -1,4 +1,5 @@
 <!-- Button trigger modal -->
+<%= turbo_frame_tag "test" do %>
 <div class="course-container">
  <% if params.key?(:course_id) %>
     <%#= @course.img %>
@@ -171,3 +172,4 @@ Pagar
   </div>
 </div>
 <!-- FIN Modal -->
+<% end%>

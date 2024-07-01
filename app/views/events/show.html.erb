@@ -17,15 +17,19 @@
               <p>$<%= @event.price %></p>
 
               <%= link_to 'Atrás', events_path, data: {turbo: false}, class: 'btn btn-flat'%>
-
-
+              <% if user_signed_in? %>
+                <%= link_to 'Inscribirme', new_event_purchase_path(@event), data: {turbo_frame: "test"}, class: "btn btn-flat" %>
+              <% else %>
+                <%= link_to 'Inscribirme',new_event_purchase_path(@event), data: {turbo: false},class: "btn btn-flat" %>
+              <%end%>
             <% if current_user == @event.user %>
               <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat' %>
-              <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat' %>
-              <%= link_to 'Inscribirme', event_purchase_path(@event), class: "btn btn-flat" %>
+
             <% end %>
 
         <% end %>
+              <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat' if current_user == @event.user %>
+
       </div>
     </div>
   </div>
