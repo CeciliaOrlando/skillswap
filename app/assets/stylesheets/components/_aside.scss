@@ -82,3 +82,11 @@ input[type="radio"] {
     box-shadow: 0 0 0 2px rgba($radio-focus-border-color, 0.5); // Añade un sombreado para mantener la accesibilidad
   }
 }
+
+.last-courses-image {
+  width: 80px; /* Ajusta el ancho según necesites */
+  height: 80px; /* Ajusta la altura según necesites */
+  border-radius: 10px; /* Esto es opcional, para bordes redondeados */
+  object-fit: cover;
+  object-position: center;
+}

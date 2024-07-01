@@ -99,7 +99,9 @@
                 <div class="last-courses-container p-3">
                   <div class="row row-cols-auto align-items-center">
                     <div class="col">
-                      <a href="<%= course_path(course) %>"><%= image_tag(course.photo, alt: course.name, style: "width:80px;height:80px; border-radius:10px") %></a>              </li>
+                      <a href="<%= course_path(course) %>">
+                        <%= image_tag(course.photo, alt: course.name, class: "last-courses-image") %>
+                        </a>
                     </div>
                     <div class="col">
                       <a class="text-decoration-none text-black" href="<%= course_path(course) %>"><strong><%= course.name %></strong></a>
