@@ -385,7 +385,7 @@ puts "creando eventos"
 event_1 = Event.create!(
   name: "Conferencia: Mujeres que Cambian el Mundo",
   description: "Únete a esta conferencia inspiradora donde mujeres líderes compartirán sus historias de éxito y cómo están cambiando el mundo desde diferentes ámbitos.",
-  price: 30, user: user_3, status: "próximamente", event_date: "viernes 5 de julio de 2024")
+  price: 30, user: user_3, status: "próximamente", event_date: "2024/07/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_1.name}"
 file = URI.open("https://images.pexels.com/photos/8145352/pexels-photo-8145352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -396,7 +396,7 @@ event_1.save!
 event_2 = Event.create!(
   name: "Taller de Networking para Mujeres Profesionales",
   description: "Un taller interactivo diseñado para ayudar a las mujeres a expandir su red profesional, intercambiar experiencias y crear conexiones significativas.",
-  price: 25, user: user_3, status: "sucediendo", event_date: "Lunes 1 de julio de 2024")
+  price: 25, user: user_3, status: "sucediendo", event_date: "2024/07/01")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_2.name}"
 file = URI.open("https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -407,7 +407,7 @@ event_2.save!
 event_3 = Event.create!(
   name: "Feria de Emprendedoras",
   description: "Ven a conocer a mujeres emprendedoras que mostrarán sus productos y servicios innovadores. Una excelente oportunidad para apoyar negocios locales y conocer nuevos talentos.",
-  price: 20, user: user_3, status: "sucediendo", event_date: "Lunes 1 de julio de 2024")
+  price: 20, user: user_3, status: "sucediendo", event_date: "2024/07/01")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_3.name}"
 file = URI.open("https://images.pexels.com/photos/5908756/pexels-photo-5908756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -418,7 +418,7 @@ event_3.save!
 event_4 = Event.create!(
   name: "Panel de Debate: Avances y Retos del Feminismo",
   description: "Participa en un debate dinámico con expertas en feminismo que discutirán los avances logrados y los desafíos que aún enfrentamos en la lucha por la igualdad de género.",
-  price: 20, user: user_3, status: "próximamente", event_date: "viernes 5 de julio de 2024")
+  price: 20, user: user_3, status: "próximamente", event_date: "2024/07/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_4.name}"
 file = URI.open("https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -430,7 +430,7 @@ event_4.save!
 event_5 = Event.create!(
   name: "Encuentro de Arte y Cultura Femenina",
   description: "Disfruta de una exhibición de arte y cultura que celebra la creatividad y expresión femenina a través de diversas disciplinas artísticas.",
-  price: 29, user: user_2, status: "caducado", event_date: "viernes 30 de junio de 2024")
+  price: 29, user: user_2, status: "caducado", event_date: "2024/06/30")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_5.name}"
 file = URI.open("https://images.pexels.com/photos/36469/woman-person-flowers-wreaths.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -441,7 +441,7 @@ event_5.save!
 event_6 = Event.create!(
   name: "Charla Motivacional: Mujeres Inspiradoras",
   description: "Escucha a mujeres inspiradoras que compartirán sus historias de superación y éxito, motivando a las asistentes a perseguir sus sueños y alcanzar sus metas.",
-  price: 15, user: user_2, status: "caducado", event_date: "viernes 30 de junio de 2024")
+  price: 15, user: user_2, status: "caducado", event_date: "2024/06/30")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_6.name}"
 file = URI.open("https://images.pexels.com/photos/2041390/pexels-photo-2041390.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -452,7 +452,7 @@ event_6.save!
 event_7 = Event.create!(
   name: "Curso Intensivo: Liderazgo y Empoderamiento",
   description: "Un curso intensivo diseñado para desarrollar habilidades de liderazgo y empoderamiento en mujeres, proporcionando herramientas prácticas para su desarrollo personal y profesional.",
-  price: 35, user: user_2,status: "próximamente", event_date: "viernes 5 de julio de 2024")
+  price: 35, user: user_2,status: "próximamente", event_date: "2024/07/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_7.name}"
 file = URI.open("https://images.pexels.com/photos/20606061/pexels-photo-20606061/free-photo-of-julia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -463,7 +463,7 @@ event_7.save!
 event_8 = Event.create!(
   name: "Festival de Cine Dirigido por Mujeres",
   description: "Disfruta de una selección de películas dirigidas por mujeres, destacando la diversidad y el talento en la industria cinematográfica femenina.",
-  price: 12, user: user_2, status: "próximamente", event_date: "viernes 5 de julio de 2024")
+  price: 12, user: user_2, status: "próximamente", event_date: "2024/07/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_8.name}"
 file = URI.open("https://images.pexels.com/photos/20806506/pexels-photo-20806506/free-photo-of-schwarz-und-weiss-schwarzweiss-frau-model.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
