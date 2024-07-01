@@ -4,7 +4,8 @@ class EventsController < ApplicationController
 
   # localhost:3000/events
   def index
-    @events = Event.order(event_date: :desc) # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
+    @events = Event.order(event_date: :desc)   # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
+    @events_
   end
 
   # localhotst:3000/events/1
@@ -42,11 +43,8 @@ class EventsController < ApplicationController
 
   # localhost:3000/events/1
   def destroy
-    @event.destroy # elimina el evento de la base de datos
-    respond_to do |format|
-      format.html {redirect_to events_path, status: :see_other, notice: "¡Evento eliminado con éxito!"} # redirecciona a la vista de eventos y pone un mensaje de que se eliminó ok
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(@event) } # elimina el evento de la vista de eventos
-    end
+    @event.destroy
+    redirect_to events_path, status: :see_other # elimina el evento de la base de datos
   end
 
   private
