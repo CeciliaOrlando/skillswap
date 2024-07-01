@@ -10,6 +10,9 @@ input[type="checkbox"] {
   width: $checkbox-size;
   height: $checkbox-size;
   vertical-align: middle; // Alinea verticalmente con el texto
+  /* Add your desired size here */
+  /* For example, to double the size of the checkbox, you can use the following code */
+  transform: scale(0.5);
 }
 
 .form-check-label {
