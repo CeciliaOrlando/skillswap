@@ -72,7 +72,7 @@ course_2.save!
 course_3 = Course.create!(
   name: "  Escritura Creativa",
   description: "  Este curso está diseñado para mujeres interesadas en desarrollar sus habilidades de escritura creativa. A lo largo del curso, las participantes aprenderán técnicas de escritura narrativa, poesía y guionismo. Se abordarán temas como la creación de personajes, la estructura narrativa y el uso del lenguaje figurado. Además, se fomentará la creatividad y la expresión personal a través de ejercicios de escritura y la lectura de obras literarias. Al finalizar el curso, las participantes tendrán un portafolio de escritos creativos y las habilidades necesarias para continuar desarrollando su escritura de manera independiente.",
-  price: 120, user: user_3,category: "Escritura")
+  price: 120, user: user_3, category: "Escritura")
 
 #agregando IMG
 puts "agregando IMG al curso #{course_3.name}"
@@ -171,7 +171,7 @@ course_10.save!
 
 #COURSE 11
 course_11 = Course.create!(
-  name: "Introducción al Derecho para Mujeres",
+  name: "Introducción al Derecho",
   description: "Este curso de Introducción al Derecho está diseñado para mujeres que desean adquirir conocimientos básicos sobre el sistema legal y sus derechos. A lo largo del curso, aprenderás sobre los fundamentos del derecho, las diferentes ramas legales y cómo se aplican en la vida cotidiana. Los objetivos de aprendizaje incluyen la comprensión de los principios jurídicos básicos, el conocimiento de los derechos civiles y familiares, y la capacidad de interpretar y aplicar normas legales. Al finalizar el curso, estarás empoderada con el conocimiento necesario para tomar decisiones informadas y defender tus derechos.",
   price: 70, user: user_2, category: "Derecho")
 
@@ -185,7 +185,7 @@ course_11 = Course.create!(
 #COURSE 12
 
 course_12 = Course.create!(
-  name: " Cosmetología Científica para Mujeres",
+  name: " Cosmetología Científica",
   description: "Este curso de Cosmetología Científica está diseñado para mujeres que desean comprender la ciencia detrás del cuidado de la piel y los productos cosméticos. A lo largo del curso, aprenderás sobre la biología de la piel, la química de los ingredientes cosméticos y cómo elegir y usar productos de manera efectiva. Los objetivos de aprendizaje incluyen el conocimiento de la estructura y función de la piel, la capacidad de leer y entender las etiquetas de los productos cosméticos, y la formulación básica de productos de cuidado de la piel. Al finalizar el curso, podrás tomar decisiones informadas sobre el cuidado de tu piel y crear tus propios productos cosméticos naturales.",
   price: 75, user: user_2, category: "Cosmetología")
 

@@ -14,6 +14,4 @@ end
 #5)add column 'category' to courses table(rails g migration AddCategoryToCourses category)
 #6) rails db:migrate
 #7) add category to courses in seeds.rb
-#8) seed.rb, all courses with categories
-#9) front-end for purchases new.html.erb
-
+#8) front-end for purchases new.html.erb
