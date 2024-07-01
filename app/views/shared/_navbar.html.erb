@@ -1,4 +1,4 @@
-<div class="navbar-small navbar-expand-md navbar-light">
+<div class="navbar1 navbar-small navbar-expand-md navbar-light">
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmall" aria-controls="navbarSmall" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,17 +10,14 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Regístrate", new_user_registration_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Ingresa", new_user_session_path, class: "nav-link" %>
+          <span class="nav-link pl-20">Hola!</span>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
 
-<div class="navbar navbar-expand-sm navbar-lewagon" style="backgroun-color: transparent;">
+<div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent">
   <div class="container-fluid">
     <%= link_to root_path do %>
       <%= image_tag 'Logo_P.png', alt: 'LSS', width: '155px', height: '30px' %>
