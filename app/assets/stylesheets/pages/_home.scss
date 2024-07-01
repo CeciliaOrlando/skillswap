@@ -93,10 +93,9 @@ display: flex;
   justify-content: center;
 }
 
-.widget-icon img{
-  color: #FFD700;
+.widget-icon svg {
+  fill: #FFD700;
 }
-
 
 .img-overlay {
   position: relative;
