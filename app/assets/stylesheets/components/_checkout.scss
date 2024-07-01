@@ -68,7 +68,17 @@ input {
   -ms-transition: none !important;
   -o-transition: none !important;
 }
-
+.course-container{
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px;
+  align-items: center;
+  width: 30%;
+  height: 800px;
+}
 .container2 {
   width: 100%;
   max-width: 400px;
