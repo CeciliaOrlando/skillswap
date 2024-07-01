@@ -1,20 +1,84 @@
+$checkbox-border-color: #5D3277; // Define el color del borde de la casilla de verificación
+$checkbox-checked-border-color: #5D3277; // Color del borde cuando el checkbox está marcado
+$checkbox-focus-border-color: #5D3277; // Color del borde cuando el checkbox está enfocado
+$checkbox-size: 10px; // Tamaño de la casilla de verificación
+$text-size: 14px; // Tamaño de la fuente del texto
+$radio-border-color: #5D3277; // Define el color del borde del radio
+$radio-checked-border-color: #5D3277; // Color del borde cuando el radio está marcado
+$radio-focus-border-color: #5D3277; // Color del borde cuando el radio está enfocado
+$radio-size: 10px; // Tamaño del radio
+
+
 aside{
   width: 100%;
   background-color: #F4F4F4;
 }
 
-$checkbox-size: 10px; // Tamaño de la casilla de verificación
-$text-size: 13px; // Tamaño de la fuente del texto
+.list-group-item {
+  border: none !important;
+}
 
 input[type="checkbox"] {
+  border: 2px solid $checkbox-border-color; // Aplica el color del borde
+  -webkit-appearance: none;
+  appearance: none;
   width: $checkbox-size;
   height: $checkbox-size;
-  vertical-align: middle; // Alinea verticalmente con el texto
-  /* Add your desired size here */
-  /* For example, to double the size of the checkbox, you can use the following code */
+  vertical-align: middle;
   transform: scale(0.5);
+
+  &:checked {
+    background-color: $checkbox-border-color;
+    border-color: $checkbox-checked-border-color; // Cambia el color del borde cuando está marcado
+  }
+
+  &:focus {
+    outline: none; // Elimina el contorno predeterminado
+    border-color: $checkbox-focus-border-color; // Cambia el color del borde en foco
+    box-shadow: 0 0 0 2px rgba($checkbox-focus-border-color, 0.5); // Añade un sombreado para mantener la accesibilidad
+  }
 }
 
 .form-check-label {
   font-size: $text-size;
+  padding-bottom: 0px;
+}
+
+.form-check-input {
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+input[type="radio"] {
+  width: $checkbox-size;
+  height: $checkbox-size;
+  vertical-align: middle;
+  transform: scale(0.5);
+}
+
+.list-group-item-reduced {
+  padding: 0; // Reduce el relleno vertical
+  margin-bottom: 5px; // Reduce el margen entre elementos
+}
+
+input[type="radio"] {
+  border: 2px solid $radio-border-color; // Aplica el color del borde
+  -webkit-appearance: none;
+  appearance: none;
+  width: $radio-size;
+  height: $radio-size;
+  border-radius: 50%; // Hace que el radio parezca un círculo
+  vertical-align: middle;
+  transform: scale(0.5);
+
+  &:checked {
+    background-color: $radio-checked-border-color;
+    border-color: $radio-checked-border-color; // Cambia el color del borde cuando está marcado
+  }
+
+  &:focus {
+    outline: none; // Elimina el contorno predeterminado
+    border-color: $radio-focus-border-color; // Cambia el color del borde en foco
+    box-shadow: 0 0 0 2px rgba($radio-focus-border-color, 0.5); // Añade un sombreado para mantener la accesibilidad
+  }
 }
