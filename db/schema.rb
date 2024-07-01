@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_185803) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_30_203801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_185803) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -70,7 +71,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_185803) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id", null: false
     t.index ["course_id"], name: "index_purchases_on_course_id"
+    t.index ["event_id"], name: "index_purchases_on_event_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -93,5 +96,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_185803) do
   add_foreign_key "courses", "users"
   add_foreign_key "events", "users"
   add_foreign_key "purchases", "courses"
+  add_foreign_key "purchases", "events"
   add_foreign_key "purchases", "users"
 end
