@@ -1,26 +1,21 @@
 <div class="container-fluid" style="background-color: #f2f2f2; padding: 20px;">
   <div class="row border d-flex ">
-
     <div class="col-md-4 p-4 bg-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ">
-       <!-- Fecha -->
-       <%= content_tag :div, event.event_date&.strftime('%B %d, %Y'), class: 'section-content text-center text-black display-6 fw-bold' %>
+      <%= content_tag :div, event.event_date&.strftime('%B %d, %Y'), class: 'section-content text-center text-black display-6 fw-bold' %>
     </div>
 
-       <div class="col-md-4 p-4 bg-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),">
-        <!-- Eventos -->
-        <div class= "d-flex align-items-center mt-2">
+    <div class="col-md-4 p-4 bg-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),">
+      <div class= "d-flex align-items-center mt-2">
         <%= content_tag :div, class: 'section-content text-center text-black' do %>
           <h2><%= link_to event.name, event_path(event), class:"text-decoration-none text-black"%></h2>
           <p><%= event.description %></p>
           <p><%= event.price %></p>
-
         <% end %>
-         </div>
-       </div>
 
-    <div class="col-md-4 my-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=url_for(event.photo)%>);">
-      <!--  Foto -->
+      </div>
     </div>
 
+    <div class="col-md-4 my-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=url_fo(event.photo)%>);">
+    </div>
   </div>
 </div>
