@@ -86,7 +86,7 @@
 <%# +  Esta línea de código define una estructura de filas y columnas utilizando el framework de diseño Bootstrap.
 +
 +  La clase "row" indica que se creará una fila de elementos, y la clase "row-cols-1" establece que la fila contendrá una sola columna en dispositivos pequeños. La clase "row-cols-md-3" establece que la fila tendrá tres columnas en dispositivos medios y grandes. Finalmente, la clase "g-4" establece un espacio de 4 unidades entre los elementos de la fila. %>
-  <div class="card-padding row row-cols-1 row-cols-md-3">
+  <div class="card-padding row row-cols-1 row-cols-md-3 container">
     <% @courses.each do |course| %>
       <div class="col">
         <%= render partial: "courses/course", locals: { course: course } %>
