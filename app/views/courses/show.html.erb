@@ -1,50 +1,25 @@
-<div class="course-banner">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-3 text-center">
-        <h3 class="text-white mt-5"><%= @course.name %></h3>
-        <p><%= @course.assessment %></p>
-          <div class="row">
-            <p class="text-white" id="course-banner-titles"><span class="spacing">Profesora</span><span class="spacing">Categorías</span> <span class="spacing">Reviews</span></p>
-            <p><span class="spacing"><%= @course.user.first_name%> <%=@course.user.last_name %></span><span class="spacing"><%= @course.category %></span><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %><span></span></p>
-          </div>
+<br><br><br><br>
+<div class="container d-flex justify-content-between">
+  <div class="">
+    <h3 class= "mt-5"><%= @course.name %></h3>
+      <p><%= @course.assessment %></p>
+      <div class="d-flex justify-conten-between align-items-center">
+        <div style="width: 50px; height: 50px; overflow: hidden; border-radius: 50%; margin-right: 10px;">
+          <%= image_tag @course.user.photo, alt: "User photo", style: "width: 100%; height: auto;" %>
+        </div>
+        <p id="course-banner-titles">
+          <span class="spacing1">Profesora</span>
+          <span class="spacing">Categorías</span>
+          <span class="spacing">Reviews</span>
+        </p>
       </div>
-    </div>
-</div>
-<aside class="aside-course">
-  <div class="mt-2 border">
-
+      <div class="d-flex align-items-center">
+        <p>
+          <span class="spacing"><%= @course.user.first_name %> <%= @course.user.last_name %></span>
+          <span class="spacing"><%= @course.category %></span>
+          <%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %>
+        </p>
+      </div>
   </div>
-</aside>
-<div class="course-container mt-5 shadow border bg-white">
-  <div class="row">
-    <div class="col-6">
-      <%= image_tag(@course.photo, alt: "course_image_cap", class: "img-fluid") %>    </div>
-    <div class="col-6">
-
-      <p>
-        <% unless current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
-          <%= link_to 'Inscribirme', new_course_purchase_path(@course), class: "btn btn-flat" %>
-        <% end %>
-      </p>
-
-
-      <p>
-        <% referer = request.referer %>
-        <% if referer && referer.include?(my_courses_path) && current_user && (current_user.courses.include?(@course) || current_user.courses_as_student.include?(@course)) %>
-          <%= link_to 'Volver a mis cursos', my_courses_path, class: 'btn btn-flat'%>
-        <% else %>
-          <%= link_to 'Volver a todos los cursos', courses_path, class: 'btn btn-flat' %>
-        <% end %>
-      </p>
-
-      <p>
-        <% if current_user == @course.user %>
-          <%= link_to 'Editar Curso', edit_course_path(@course), class: 'btn btn-flat' %>
-          <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' }, class: 'btn btn-flat' %>
-          <%= link_to 'Añadir Nuevo Curso', new_course_path(@course), class: 'btn btn-flat' %>
-        <% end %>
-      </p>
-    </div>
-  </div>
+  <div class="aside_course"><%= image_tag @course.photo, size: "400x400" %></div>
 </div>
