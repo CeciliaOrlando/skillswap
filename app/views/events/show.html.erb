@@ -14,17 +14,19 @@
               <p><h1><%= @event.name %></h1>
               <p><%= @event.description %></p>
               <p><%= @event.event_date %></p>
-              <p>$<%= @event.price %></p>
+              <p><strong> <%= number_to_currency(@event.price) %></strong></p>
 
               <%= link_to 'Atrás', events_path, data: {turbo: false}, class: 'btn btn-flat'%>
+
+
               <% if user_signed_in? %>
-                <%= link_to 'Inscribirme', new_event_purchase_path(@event), data: {turbo_frame: "test"}, class: "btn btn-flat" %>
+                <%= link_to 'Pagar', new_event_purchase_path(@event), data: {turbo_frame: "test"}, class: "btn btn-flat" %>
               <% else %>
-                <%= link_to 'Inscribirme',new_event_purchase_path(@event), data: {turbo: false},class: "btn btn-flat" %>
-              <%end%>
+                  <%= link_to 'Pagar',new_event_purchase_path(@event), data: {turbo: false},class: "btn btn-flat" %>
+              <%end %>
+
             <% if current_user == @event.user %>
               <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat' %>
-
             <% end %>
 
         <% end %>
