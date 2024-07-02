@@ -4,7 +4,7 @@
   <div class="event-container mt-5 p-5 shadow border bg-white">
     <div class="row border d-flex">
       <div class="col-6 mt-4">
-        <img src="https://images.pexels.com/photos/8007128/pexels-photo-8007128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img-fluid" height="650" width="600">
+        <%= image_tag @event.photo || "https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&dpr=1", class:"img-fluid", width:"700", height:"700" %>
       </div>
 
       <div class="col-6 p-8">
@@ -19,11 +19,10 @@
               <%= link_to 'Atrás', events_path, data: {turbo: false}, class: 'btn btn-flat'%>
 
 
-              <% if user_signed_in? %>
-                <%= link_to 'Pagar', new_event_purchase_path(@event), data: {turbo_frame: "test"}, class: "btn btn-flat" %>
-              <% else %>
-                  <%= link_to 'Pagar',new_event_purchase_path(@event), data: {turbo: false},class: "btn btn-flat" %>
-              <%end %>
+
+                <%# <%= link_to 'Pagar', new_event_purchase_path, data: {turbo_frame: "test"}, class: "btn btn-flat" %> %>
+
+
 
             <% if current_user == @event.user %>
               <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat' %>
@@ -32,7 +31,7 @@
         <% end %>
               <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat' if current_user == @event.user %>
 
-      </div>
+        </div>
     </div>
   </div>
 </div>

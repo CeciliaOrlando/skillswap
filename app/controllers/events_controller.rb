@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :event_date, :price, :status) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
+    params.require(:event).permit(:name, :description, :event_date, :price, :status, :photo) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
   end
 
   def set_event
