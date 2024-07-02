@@ -1,0 +1,21 @@
+.course-banner {
+  background-color: #5D3277; // Cambia este color al que prefieras
+  color: white;
+  padding: 70px 0;
+  height: 300px;
+  width: 100%; // Ajusta el ancho del banner
+  box-sizing: border-box; // Incluye el padding en el ancho total
+}
+
+.spacing {
+  margin-right: 57px; /* Ajusta el espacio según necesites */
+}
+
+.spacing1 {
+  margin-right: 57px; /* Ajusta el espacio según necesites */
+  margin-left: 50px;
+}
+
+#course-banner-titles{
+  font-size: small;
+}
