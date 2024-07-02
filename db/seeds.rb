@@ -396,7 +396,7 @@ event_1.save!
 event_2 = Event.create!(
   name: "Taller de Networking para Mujeres Profesionales",
   description: "Un taller interactivo diseñado para ayudar a las mujeres a expandir su red profesional, intercambiar experiencias y crear conexiones significativas.",
-  price: 25, user: user_3, status: "sucediendo", event_date: "2024/07/01")
+  price: 25, user: user_3, status: "sucediendo", event_date: "2024/07/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_2.name}"
 file = URI.open("https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -407,10 +407,10 @@ event_2.save!
 event_3 = Event.create!(
   name: "Feria de Emprendedoras",
   description: "Ven a conocer a mujeres emprendedoras que mostrarán sus productos y servicios innovadores. Una excelente oportunidad para apoyar negocios locales y conocer nuevos talentos.",
-  price: 20, user: user_3, status: "sucediendo", event_date: "2024/07/01")
+  price: 20, user: user_3, status: "sucediendo", event_date: "2024/08/01")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_3.name}"
-file = URI.open("https://images.pexels.com/photos/5908756/pexels-photo-5908756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+file = URI.open("https://images.pexels.com/photos/8837196/pexels-photo-8837196.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 event_3.photo.attach(io: file, filename: "feriaemprendedoras.jpg", content_type: "image/jpg")
 event_3.save!
 
@@ -418,7 +418,7 @@ event_3.save!
 event_4 = Event.create!(
   name: "Panel de Debate: Avances y Retos del Feminismo",
   description: "Participa en un debate dinámico con expertas en feminismo que discutirán los avances logrados y los desafíos que aún enfrentamos en la lucha por la igualdad de género.",
-  price: 20, user: user_3, status: "próximamente", event_date: "2024/07/05")
+  price: 20, user: user_3, status: "próximamente", event_date: "2024/08/05")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_4.name}"
 file = URI.open("https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
@@ -452,10 +452,10 @@ event_6.save!
 event_7 = Event.create!(
   name: "Curso Intensivo: Liderazgo y Empoderamiento",
   description: "Un curso intensivo diseñado para desarrollar habilidades de liderazgo y empoderamiento en mujeres, proporcionando herramientas prácticas para su desarrollo personal y profesional.",
-  price: 35, user: user_2,status: "próximamente", event_date: "2024/07/05")
+  price: 35, user: user_2,status: "próximamente", event_date: "2024/07/30")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_7.name}"
-file = URI.open("https://images.pexels.com/photos/20606061/pexels-photo-20606061/free-photo-of-julia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+file = URI.open("https://images.pexels.com/photos/1438084/pexels-photo-1438084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
 event_7.photo.attach(io: file, filename: "liderazgoempoderamiento.jpg", content_type: "image/jpg")
 event_7.save!
 
