@@ -11,23 +11,25 @@
       <img src="https://images.pexels.com/photos/933255/pexels-photo-933255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="object-fit: cover;">
     </div>
   </div>
-  <div class="container">
+  <div class="container p-5">
     <div class="banner-home" id="home-banner">
-      <div class="container">
+  <%= render "shared/search" %>
+      <div class="container align-items-center">
         <p>transforma tu mundo con <strong>Skill Swap!</strong></p>
-        <h1>EMPODERATE</strong>!</h1>
+        <h1>EMPODERATE!</h1>
         <%= link_to "EMPIEZA AHORA", "#", class: "btn btn-flat" %>
       </div>
-      <div class="widget-container d-flex mt-5 p-5 align-items-center ">
+
+      <div class="widget-container d-flex mt-5 p-4 align-items-center ">
 
         <div class="widget p-5 mt-5">
           <div class="d-flex">
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
               <img src="<%= asset_path('team.svg') %>" alt="Idea">
             </div>
-            <div class="flex-grow-1 ms-3">
-              <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-              <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">APRENDE CON EL MEJOR EQUIPO</p>
+              <a href="#" style="font-size:12px;">info</a>
             </div>
           </div>
         </div>
@@ -37,9 +39,9 @@
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
               <img src="<%= asset_path('education.svg') %>" alt="Idea">
             </div>
-            <div class="flex-grow-1 ms-3">
-              <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-              <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">ENCUENTRA LOS MEJORES CURSOS</p>
+              <a href="#" style="font-size:12px;">info</a>
             </div>
           </div>
         </div>
@@ -49,9 +51,9 @@
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
               <img src="<%= asset_path('light-bulb-idea.svg') %>" alt="Idea">
             </div>
-            <div class="flex-grow-1 ms-3">
-              <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-              <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">APRENDE Y EMPRENDE</p>
+              <a href="#" style="font-size:12px;">info</a>
             </div>
           </div>
         </div>
