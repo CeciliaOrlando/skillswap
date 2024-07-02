@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @courses = Course.first(4)
+    @courses = Course.first(6)
   end
 
   def my_courses
