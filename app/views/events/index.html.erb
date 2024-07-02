@@ -1,22 +1,28 @@
+<br><br><br><br>
 <div class="event-container">
   <div class="row">
     <div class="col-12">
       <%= link_to 'Crear Evento', new_event_path(current_user), class: 'btn btn-flat' %>
 
-<%#
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#Sucediendo" data-toggle= "tab"> Sucediendo</li>
-                <li><a href="#Próximo" data-toggle= "tab" > Próximo</li>
-                <li><a href="#Caducado" data-toggle= "tab"> Caducado</li>
-            </ul>
-
-
-            <div class="tab-content">
-              <div class="tab-pane fade" id="Sucediendo"></div>
-              <div class="tab-pane fade" id="Proximo"></div>
-              <div class="tab-pane fade" id="Caducado"></div>
+            <div class="d-flex justify-content-center mb-4">
+              <ul class="nav nav-tabs text-dark" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link me-4 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Sucediendo" type="button" role="tab" aria-controls="home" aria-selected="true"><strong>Sucediendo</strong></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link me-4" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Próximo" type="button" role="tab" aria-controls="profile" aria-selected="false"><strong>Próximo</strong></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link me-4" id="contact-tab" data-bs-toggle="tab" data-bs-target="#Caducado" type="button" role="tab" aria-controls="contact" aria-selected="false"><strong>Caducado</strong></button>
+                </li>
+              </ul>
             </div>
- %>
+
+
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="Sucediendo" role="tabpanel" aria-labelledby="home-tab"></div>
+              <div class="tab-pane fade" id="Próximo" role="tabpanel" aria-labelledby="profile-tab"></div>
+              <div class="tab-pane fade" id="Caducado" role="tabpanel" aria-labelledby="contact-tab"></div>
 
         <%= render @events %>
 

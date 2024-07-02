@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   # localhost:3000/events
   def index
     @events = Event.order(event_date: :desc)   # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
-    @events_
   end
 
   # localhotst:3000/events/1
