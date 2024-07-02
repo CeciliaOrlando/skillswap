@@ -18,6 +18,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 30px;
   color: #fcfcfc;
+  margin-bottom: 0px;
 }
 
 .banner-home {
@@ -82,19 +83,19 @@ background-color: #00000069;
 transition: background 0.3s;
 border-radius: 4px 4px 4px 4px;
 display: flex;
+//justify-content: space-between; /* Agrega espacio entre elementos */
 }
 
 .widget-container {
-
+  color: #fcfcfc;
   width: 100%;
   height: 500px;
-  padding: 0px 10px 10px 10px;
-  display: flex;
-  justify-content: center;
+  padding: 0px 20px 20px 20px;
+  justify-content: space-between; /* Agrega espacio entre elementos */
 }
 
-.widget-icon svg {
-  fill: #FFD700;
+.widget:hover {
+  background-color: #000000a8;
 }
 
 .img-overlay {
@@ -109,4 +110,11 @@ display: flex;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   z-index: 1;
+}
+
+
+
+.card-padding{
+  padding: 20px;
+  margin-bottom: 10px; /* Agrega espacio entre elementos */
 }

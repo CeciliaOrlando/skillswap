@@ -1,61 +1,61 @@
 <%# banner %>
-
-
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="position:relative;" >
   <div class="carousel-inner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
     <div class="carousel-item active img-overlay">
       <img src="https://images.pexels.com/photos/3771106/pexels-photo-3771106.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="object-fit: cover;">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item img-overlay">
       <img src="https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="object-fit: cover;">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item img-overlay">
       <img src="https://images.pexels.com/photos/933255/pexels-photo-933255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="object-fit: cover;">
     </div>
   </div>
-  <div class="container">
+  <div class="container p-5">
     <div class="banner-home" id="home-banner">
-      <div class="container">
+  <%= render "shared/search" %>
+      <div class="container align-items-center">
         <p>transforma tu mundo con <strong>Skill Swap!</strong></p>
-        <h1>EMPODERATE</strong>!</h1>
+        <h1>EMPODERATE!</h1>
         <%= link_to "EMPIEZA AHORA", "#", class: "btn btn-flat" %>
       </div>
-      <div class="widget-container d-flex mt-5 p-5 align-items-center ">
+
+      <div class="widget-container d-flex mt-5 p-4 align-items-center ">
+
         <div class="widget p-5 mt-5">
           <div class="d-flex">
-            <div style="flex-shrink-0 width:40px; height:40px; margin-right:10px; display:flex; justify-content:center; align-items:center; color:#FFD700; border-radius:50%;">
-              <span class="fa fa-lightbulb"></span>
+            <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
+              <img src="<%= asset_path('team.svg') %>" alt="Idea">
             </div>
-            <div style="display:flex; flex-direction:column; justify-content:center;">
-              <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-              <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">APRENDE CON EL MEJOR EQUIPO</p>
+              <a href="#" style="font-size:12px;">info</a>
             </div>
           </div>
         </div>
-        <div class="widget p-5 mt-5">
+
+       <div class="widget p-5 mt-5">
           <div class="d-flex">
-            <div style="width:40px; height:40px; margin-right:10px; display:flex; justify-content:center; align-items:center; color:#FFD700; border-radius:50%;">
-              <span class="fa fa-lightbulb"></span>
+            <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
+              <img src="<%= asset_path('education.svg') %>" alt="Idea">
             </div>
-            <div style="display:flex; flex-direction:column; justify-content:center;">
-              <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-              <a href="#" style="font-size:12px; color:#337ab7;">info</a>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">ENCUENTRA LOS MEJORES CURSOS</p>
+              <a href="#" style="font-size:12px;">info</a>
             </div>
           </div>
         </div>
+
         <div class="widget p-5 mt-5">
-
-<div class="d-flex align-items-center">
-  <div class="flex-shrink-0 widget-icon" style="width:80px; height:80px; margin-right:10px;">
-    <img src="<%= asset_path('light-bulb-idea.svg') %>" alt="Idea">
-  </div>
-  <div class="flex-grow-1 ms-3">
-    <p style="margin:0; font-size:16px;">Las mejores de la industria</p>
-    <a href="#" style="font-size:12px; color:#337ab7;">info</a>
-  </div>
-</div>
-
-
+          <div class="d-flex">
+            <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
+              <img src="<%= asset_path('light-bulb-idea.svg') %>" alt="Idea">
+            </div>
+            <div class="flex-grow-1 ms-3" style="margin-top:5px;">
+              <p style="margin:0; font-size:16px;">APRENDE Y EMPRENDE</p>
+              <a href="#" style="font-size:12px;">info</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -83,8 +83,15 @@
 </div>
 
 <div class="cards-container">
-  <div class="row">
-    <%= render partial: "courses/course", collection: @courses %>
+<%# +  Esta línea de código define una estructura de filas y columnas utilizando el framework de diseño Bootstrap.
++
++  La clase "row" indica que se creará una fila de elementos, y la clase "row-cols-1" establece que la fila contendrá una sola columna en dispositivos pequeños. La clase "row-cols-md-3" establece que la fila tendrá tres columnas en dispositivos medios y grandes. Finalmente, la clase "g-4" establece un espacio de 4 unidades entre los elementos de la fila. %>
+  <div class="card-padding row row-cols-1 row-cols-md-3 container">
+    <% @courses.each do |course| %>
+      <div class="col">
+        <%= render partial: "courses/course", locals: { course: course } %>
+      </div>
+    <% end %>
   </div>
 </div>
 
