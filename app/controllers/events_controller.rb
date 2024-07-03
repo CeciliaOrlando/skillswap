@@ -4,7 +4,10 @@ class EventsController < ApplicationController
 
   # localhost:3000/events
   def index
-    @events = Event.order(event_date: :desc)   # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
+    @events = Event.order(event_date: :desc).where("event_date >= ?", Date.today)
+    @events_sucediendo = Event.order(event_date: :desc).where(event_date: Date.today)
+    @events_caducados = Event.order(event_date: :desc).where("event_date < ?", Date.today)
+     # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
   end
 
   # localhotst:3000/events/1
