@@ -1,21 +1,24 @@
-
-  <h2>Crear Nuevo Curso</h2>
-
-<div class="courses-container mt-5 p-5 shadow border bg-white ">
-  <div class="row">
-    <div class="col-6">
-      <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600" alt="course_image_cap">
-    </div>
-    <div class="col-6 ">
-    <p>
-      <%= simple_form_for @course, url: courses_path do |f| %>
-        <%= f.input :name, label: "Nombre del curso" %>
-        <%= f.input :description, label: "Descripción del curso" %>
-        <%= f.input :price, label: "Precio" %>
-        <%= f.submit "Crear nuevo curso", class: 'btn btn-flat' %>
-      <% end %>
-    </p>
-    <p><%= link_to "Atrás", courses_path, class:"btn btn-flat" %></p>
+<div class="container my-4">
+  <div class="mt-2 mb-5 p-3 shadow border bg-white ">
+    <div class="row">
+      <div class="col-md-5 d-flex justify-content-center align-items-center" style="min-height: 100%;">
+        <img src="https://images.pexels.com/photos/4468011/pexels-photo-4468011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="course_image_cap", style= "width: 500px; height: 670px; object-fit: cover;">
+      </div>
+      <div class="col-md-7">
+        <h3 class="text-center mb-0"> Crear nuevo curso </h3>
+        <p>
+          <%= simple_form_for @course, url: courses_path do |f| %>
+            <%= f.input :name, label: 'Nombre del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.input :description, label: 'Descripción', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%# <%= f.collection_select :category, Course.select(:category).distinct.pluck(:category).map(&:capitalize), :to_s, :to_s, { prompt: "Seleccione una Categoría" }, { class: 'mb-2' } %>
+            <%# <%= f.text_field :new_category, placeholder: "Ingrese una nueva categoría", class: 'mb-2' %>
+            <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.submit "Crear nuevo curso", class: 'btn btn-flat' %>
+          <% end %>
+        </p>
+        <p><%= link_to "Atrás", :back, class: "btn btn-flat w-100 text-white", style: 'background-color: #A16DB7;' %></p>
+      </div>
     </div>
   </div>
 </div>
