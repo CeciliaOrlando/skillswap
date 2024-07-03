@@ -1,5 +1,0 @@
- meta_product_name: "Skill Swap"  #product name
- meta_title: "Skill Swap - Juntas, empoderando tu potencial"  #Product name - Product tagline
- meta_description: "La plataforma está específicamente dirigida a mujeres latinoamericanas de todas las edades y ámbitos socioeconómicos" #relevant description
- meta_image: "Logo_P.png" # should exist in `app/assets/images/`
- twitter_account: "@product_twitter_account" # required for Twitter Cards
