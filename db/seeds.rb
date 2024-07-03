@@ -452,7 +452,7 @@ event_6.save!
 event_7 = Event.create!(
   name: "Curso Intensivo: Liderazgo y Empoderamiento",
   description: "Un curso intensivo diseñado para desarrollar habilidades de liderazgo y empoderamiento en mujeres, proporcionando herramientas prácticas para su desarrollo personal y profesional.",
-  price: 35, user: user_2,status: "Próximos", event_date: "2024/07/30")
+  price: 35, user: user_2,status: "Próximos", event_date: "2024/07/03")
 #IMG DE EVENTO
 puts "agregando IMG al evento #{event_7.name}"
 file = URI.open("https://images.pexels.com/photos/1438084/pexels-photo-1438084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
