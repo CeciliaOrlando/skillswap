@@ -23,7 +23,7 @@
 <div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent">
   <div class="container-fluid">
     <%= link_to root_path do %>
-      <%= image_tag 'Logo_P.png', alt: 'LSS', width: '280px', height: '60px' %>
+      <%= image_tag 'Logo_P.png', alt: 'LSS', width: '210px', height: '45px' %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,9 @@
         </li>
         <li class="nav-item">
           <%= link_to "EVENTOS", events_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "BLOG", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "CONTACTO", "#", class: "nav-link" %>
