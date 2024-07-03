@@ -3,8 +3,12 @@
   <div class="modal_background">
     <div class = "login_container">
      <!-- LOG-IN FORM SECTION -->
+      <div class="flex-shrink-0" style="width:30px; height:30px; margin-left:340px;">
+          <%= link_to root_path do %>
+          <img src="<%= asset_path('close.svg') %>" alt="Idea">
+          <% end %>
+        </div>
       <h2 class="text-center">Ingresa</h2>
-
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
                  <%= f.input :email,
