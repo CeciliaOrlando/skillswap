@@ -1,25 +1,89 @@
-<br><br><br><br>
 <div class="container d-flex justify-content-between">
-  <div class="">
+  <div class="mb-3">
     <h3 class= "mt-5"><%= @course.name %></h3>
       <p><%= @course.assessment %></p>
-      <div class="d-flex justify-conten-between align-items-center">
-        <div style="width: 50px; height: 50px; overflow: hidden; border-radius: 50%; margin-right: 10px;">
-          <%= image_tag @course.user.photo, alt: "User photo", style: "width: 100%; height: auto;" %>
+      <div class="d-flex">
+        <div class="d-flex">
+            <%= image_tag @course.user.photo, alt: "User photo", class: "avatar me-3", size:"50x50"%>
+          <div class=" me-3 d-flex flex-column">
+            <p class="mb-0"><small>Profesora</small></p>
+            <p><%= @course.user.first_name %> <%= @course.user.last_name %></p>
+          </div>
         </div>
-        <p id="course-banner-titles">
-          <span class="spacing1">Profesora</span>
-          <span class="spacing">Categorías</span>
-          <span class="spacing">Reviews</span>
-        </p>
+        <div class="me-3">
+          <p class="mb-0"><small>Categorías</small></p>
+          <p><%= @course.category %></p>
+        </div>
+        <div class="me-3">
+          <p class="mb-0"><small>Reviews</small></p>
+          <p><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
+        </div>
       </div>
-      <div class="d-flex align-items-center">
-        <p>
-          <span class="spacing"><%= @course.user.first_name %> <%= @course.user.last_name %></span>
-          <span class="spacing"><%= @course.category %></span>
-          <%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %>
-        </p>
+      <div class="border p-3">
+        <h4>Descripción del Curso</h4>
+        <hr>
+        <p><%= @course.description %></p>
       </div>
+      <div class="mt-3 border p-3">
+        <h4>Currículum</h4>
+        <hr>
+        <p><%= @course.curriculum %></p>
+      </div>
+        <div class="mt-3 border p-3">
+          <h4>Profesora</h4>
+          <hr>
+          <div class="d-flex">
+            <div class="d-flex">
+              <%= image_tag @course.user.photo, alt: "User photo", style: "border-radius: 50%;", size:"200x200" %>
+            </div>
+            <div class="ms-5 d-flex flex-column">
+              <p class="mb-0"><%= @course.user.first_name %> <%= @course.user.last_name %></p>
+              <p class="text-body-secondary"><small>Profesora</small></p>
+              <p><strong>DESCRIPCION QUE FALTA EN LA SEED</strong></p>
+            </div>
+          </div>
+        </div>
   </div>
-  <div class="aside_course"><%= image_tag @course.photo, size: "400x400" %></div>
+  <div class="ms-4">
+    <div class="aside_course border p-3">
+      <%= image_tag @course.photo, size: "450x300" %>
+      <h1 class="mt-3 mb-3">$<%= @course.price %></h1>
+      <p class="mt-3 mb-3"><%= link_to "Comprar", new_course_purchase_path(@course), class: "btn btn-flat w-100" %></p>
+      <h4 class="mt-3 mb-3"><strong>Características del curso</strong></h4>
+      <div class="d-flex align-items-center mb-3">
+        <i class="fa-solid fa-book-open" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0"><%= @course.lecture %> Lectures</p>
+      </div>
+      <div class= "d-flex align-items-center mb-3">
+        <i class="fa-solid fa-book-open-reader" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0"><%= @course.quiz %> Evaluaciones</p>
+      </div>
+      <div class= "d-flex align-items-center mb-3">
+        <i class="fa-regular fa-clock" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0"><%= @course.duration.titleize %></p>
+            </div>
+      <div class= "d-flex align-items-center mb-3">
+        <i class="fa-solid fa-arrow-turn-up" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0" style="font-size:90%;"><%= @course.skill %></p>
+      </div>
+      <div class= "d-flex align-items-center mb-3">
+        <i class="fa-solid fa-language" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0"><%= @course.language %></p>
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <i class="fa-solid fa-user-graduate" style="color: #5D3277;"></i>
+        <p class="ms-4 mb-0"><%= @course.number_of_student %> Estudiantes</p>
+      </div>
+      <div class="d-flex justify-content-evenly">
+        <hr style="width:30%">
+        <div class="mt-1">
+          <i class="fa-brands fa-facebook fa-xl me-2" style="color: #5d3277;"></i>
+          <i class="fa-brands fa-pinterest fa-xl me-2" style="color: #5d3277;"></i>
+          <i class="fa-brands fa-square-x-twitter fa-xl me-2" style="color: #5d3277;"></i>
+          <i class="fa-brands fa-linkedin fa-xl" style="color: #5d3277;"></i>
+        </div>
+        <hr style="width:30%">
+      </div>
+    </div>
+  </div>
 </div>
