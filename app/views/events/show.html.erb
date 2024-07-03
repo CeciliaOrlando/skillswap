@@ -9,7 +9,7 @@
 
       <div class="col-6 p-8">
 
-        <%# <%= turbo_frame_tag "test" do %> %>
+        <%# <%= turbo_frame_tag "test" do %> 
 
               <p><h1><%= @event.name %></h1>
               <p><%= @event.description %></p>
@@ -28,7 +28,7 @@
               <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;'%>
             <% end %>
 
-      
+
               <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat text-white', style: 'background-color: #F32D6E;' if current_user == @event.user %>
 
         </div>
