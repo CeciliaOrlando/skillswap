@@ -6,8 +6,12 @@
       </div>
       <br>
       <% if @courses_as_teacher.any? %>
-        <h2 class="mb-5">Cursos que imparto como docente</h2>
-        <div class="mycourses-container">
+        <div class="container text-center">
+          <h2 class="ms-5 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
+            Cursos que imparto como docente 👩‍🏫
+          </h2>
+        </div>
+        <div class="mycourses-container mt-5">
           <% @courses_as_teacher.each_slice(3) do |course_group| %>
             <div class="row mb-4">
               <% course_group.each do |course| %>
@@ -21,7 +25,9 @@
       <% end %>
 
       <% if @courses_as_student.any? %>
-        <h2>Estudiante</h2>
+        <h2 class="ms-5 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
+          Cursos en los que estoy inscrita 📚
+        </h2>
         <div class="row">
           <% @courses_as_student.each do |course| %>
             <div class="col-md-3 mb-4 d-flex justify-content-center">
