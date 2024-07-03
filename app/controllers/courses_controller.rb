@@ -3,7 +3,11 @@ class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @courses = Course.all
+    if params[:query].present?
+      @courses = Course.search_courses(params[:query])
+    else
+      @courses = Course.all
+    end
   end
 
   def show

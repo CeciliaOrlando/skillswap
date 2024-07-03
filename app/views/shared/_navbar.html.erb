@@ -1,8 +1,8 @@
-<div class="navbar1 navbar-small navbar-expand-md navbar-light">
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmall" aria-controls="navbarSmall" aria-expanded="false" aria-label="Toggle navigation">
+<div class="navbar1 navbar-small navbar-expand-md navbar-light d-flex bd-highlight">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmall" aria-controls="navbarSmall" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSmall">
+  <div class="collapse navbar-collapse p-2 flex-shrink-1 bd-highlight" id="navbarSmall">
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item">
@@ -15,12 +15,15 @@
       <% end %>
     </ul>
   </div>
+  <div class="collapse navbar-collapse search-bar-small p-2 w-100 bd-highlight">
+      <%= render "shared/search" %> <!-- This is the search bar -->
+  </div>
 </div>
 
 <div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent">
   <div class="container-fluid">
     <%= link_to root_path do %>
-      <%= image_tag 'Logo_P.png', alt: 'LSS', width: '155px', height: '30px' %>
+      <%= image_tag 'Logo_P.png', alt: 'LSS', width: '280px', height: '60px' %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

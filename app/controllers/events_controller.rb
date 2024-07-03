@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   # localhost:3000/events
   def index
     @events = Event.order(event_date: :desc)   # devuelve la coleccion de todas las instancias de Events en la base de datos y me lo asigna en la variable de instancia @events.
-    @events_
   end
 
   # localhotst:3000/events/1
@@ -50,7 +49,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :event_date, :price, :status) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
+    params.require(:event).permit(:name, :description, :event_date, :price, :status, :photo) # son los campos que estan permitidos para cear o modificar en eventos en la base de datos
   end
 
   def set_event

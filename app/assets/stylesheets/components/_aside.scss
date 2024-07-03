@@ -10,9 +10,10 @@ $radio-size: 10px; // Tamaño del radio
 
 
 aside{
-  width: 100%;
-  background-color: #F4F4F4;
+  width: 30%;
+  background-color: #f4f4f4;
 }
+
 
 .list-group-item {
   border: none !important;
@@ -81,4 +82,12 @@ input[type="radio"] {
     border-color: $radio-focus-border-color; // Cambia el color del borde en foco
     box-shadow: 0 0 0 2px rgba($radio-focus-border-color, 0.5); // Añade un sombreado para mantener la accesibilidad
   }
+}
+
+.last-courses-image {
+  width: 80px; /* Ajusta el ancho según necesites */
+  height: 80px; /* Ajusta la altura según necesites */
+  border-radius: 10px; /* Esto es opcional, para bordes redondeados */
+  object-fit: cover;
+  object-position: center;
 }

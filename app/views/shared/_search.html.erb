@@ -1,0 +1,6 @@
+<div class="form-group has-search mb- w-50 mx-auto">
+  <%= form_with url: courses_path, method: :get do %>
+  <span class="fa-solid fa-magnifying-glass lupa"></span>
+  <%= text_field_tag :query, nil, class: "form-control", placeholder:"¿Con cuál curso quieres empezar hoy?"%>
+  <% end %>
+</div>

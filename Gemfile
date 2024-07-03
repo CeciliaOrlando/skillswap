@@ -78,5 +78,5 @@ end
 
 # Gemas del proyecto
 
-gem "dotenv-rails"
 gem "cloudinary"
+gem "pg_search"
