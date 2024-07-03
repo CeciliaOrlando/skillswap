@@ -1,27 +1,44 @@
-<div class="mycourses-container mt-5">
+<div class="mycourses-container">
   <div class="row justify-content-center">
-    <div class="col-10">
-      <h1 id="home-banner">Mis Cursos</h1>
+    <div class="col-8">
+      <div class="text-center">
+        <h1 id="home-banner" style="color: #5D3277;"><strong>Mis Cursos</strong></h1>
+      </div>
       <br>
-      <h2>Docente </h2>
-      <div class="row">
-        <% @courses_as_teacher.each do |course| %>
-          <div class="col-md-4 mb-4 d-flex justify-content-center">
-            <%= render partial: "courses/course", locals: { course: course } %>
-          </div>
-        <% end %>
-      </div>
+      <% if @courses_as_teacher.any? %>
+        <h2 class="mb-5">Cursos que imparto como docente</h2>
+        <div class="mycourses-container">
+          <% @courses_as_teacher.each_slice(3) do |course_group| %>
+            <div class="row mb-4">
+              <% course_group.each do |course| %>
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                  <%= render partial: "courses/course", locals: { course: course } %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
-      <h2>Estudiante</h2>
-      <div class="row">
-        <% @courses_as_student.each do |course| %>
-          <div class="col-md-4 mb-4 d-flex justify-content-center">
-            <%= render partial: "courses/course", locals: { course: course } %>
-          </div>
-        <% end %>
-      </div>
+      <% if @courses_as_student.any? %>
+        <h2>Estudiante</h2>
+        <div class="row">
+          <% @courses_as_student.each do |course| %>
+            <div class="col-md-3 mb-4 d-flex justify-content-center">
+              <%= render partial: "courses/course", locals: { course: course } %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
-      <div class="text-center mt-4">
+      <% if @courses_as_teacher.empty? && @courses_as_student.empty? %>
+        <div class="text-center mt-4 mb-4">
+          <p class="w-100 text-white" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
+            ¡Oops! No tienes cursos inscritos aún.
+          </p>
+        </div>
+      <% end %>
+      <div class="text-center mt-5 mb-5">
         <%= link_to 'Volver a cursos', courses_path, class: 'btn btn-flat' %>
       </div>
     </div>
