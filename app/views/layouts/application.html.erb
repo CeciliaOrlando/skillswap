@@ -13,6 +13,7 @@
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+    <%= turbo_frame_tag "login"%> <!--login modal-->
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
