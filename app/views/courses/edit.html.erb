@@ -1,19 +1,19 @@
-<h1>Edita tu curso</h1>
-
-<div class="course-container mt-5 p-5 shadow border bg-white ">
-  <div class="row">
-    <div class="col-6">
-      <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=600" alt="course_image_cap">
-    </div>
-    <div class="col-6">
-      <p>
+<div class="container my-4">
+  <div class="mb-5 p-3 shadow border bg-white">
+    <div class="row">
+      <div class="col-md-5 d-flex justify-content-center align-items-center" style="min-height: 100%;">
+        <%= image_tag @course.photo, alt: "course_image_cap", style: "max-width: 100%; max-height: 100%; object-fit: contain;" %>
+      </div>
+      <div class="col-md-7">
+        <h3>Edita tu curso</h3>
         <%= simple_form_for @course, url: course_path(@course) do |f| %>
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <%= f.input :price %>
-          <%= f.submit "Actualizar Curso", class:'btn btn-flat' %>
+          <%= f.input :name, label: 'Nombre del curso', input_html: { class: 'mb-2' } %>
+          <%= f.input :description, label: 'Descripción', as: :text, input_html: { class: 'mb-2' } %>
+          <%= f.input :price, label: 'Precio', input_html: { class: 'mb-2' } %>
+          <%= f.input :photo, as: :file, input_html: { class: 'mb-2' } %>
+          <%= f.submit "Actualizar Curso", class: 'btn btn-flat' %>
         <% end %>
-      </p>
+      </div>
     </div>
   </div>
 </div>
