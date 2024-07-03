@@ -2,15 +2,15 @@
   <div class="mb-5 p-3 shadow border bg-white">
     <div class="row">
       <div class="col-md-5 d-flex justify-content-center align-items-center" style="min-height: 100%;">
-        <%= image_tag @course.photo, alt: "course_image_cap", style: "max-width: 100%; max-height: 100%; object-fit: contain;" %>
+        <%= image_tag @course.photo, alt: "course_image_cap", style: "width: 500px; height: 600px; object-fit: cover;" %>
       </div>
       <div class="col-md-7">
-        <h3>Edita tu curso</h3>
+        <h3 class="text-center">Edita tu curso</h3>
         <%= simple_form_for @course, url: course_path(@course) do |f| %>
-          <%= f.input :name, label: 'Nombre del curso', input_html: { class: 'mb-2' } %>
-          <%= f.input :description, label: 'Descripción', as: :text, input_html: { class: 'mb-2' } %>
-          <%= f.input :price, label: 'Precio', input_html: { class: 'mb-2' } %>
-          <%= f.input :photo, as: :file, input_html: { class: 'mb-2' } %>
+          <%= f.input :name, label: 'Nombre del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+          <%= f.input :description, label: 'Descripción', label_html: { style: 'font-size: 15px;' }, as: :text, input_html: { class: 'mb-2', style: 'height: 180px;' } %>
+          <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+          <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
           <%= f.submit "Actualizar Curso", class: 'btn btn-flat' %>
         <% end %>
       </div>
