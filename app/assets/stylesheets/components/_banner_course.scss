@@ -1,10 +1,9 @@
-.course-banner {
-  background-color: #5D3277; // Cambia este color al que prefieras
+.course_banner {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #5D3277; /* O cualquier otro color que prefieras */
   color: white;
-  padding: 70px 0;
-  height: 300px;
-  width: 100%; // Ajusta el ancho del banner
-  box-sizing: border-box; // Incluye el padding en el ancho total
+  margin-bottom: 20px; /* Espacio debajo del banner */
 }
 
 .spacing {
