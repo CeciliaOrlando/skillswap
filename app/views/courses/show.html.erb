@@ -101,7 +101,7 @@
       <p>
       <% if current_user == @course.user %>
         <%= link_to 'Editar Curso', edit_course_path(@course), class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;' %>
-        <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' }, class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;' %>
+        <%= link_to 'Eliminar Curso', course_path(@course), data: {turbo_method: :delete, turbo_confirm: '¿Estás segura?' }, class: 'btn btn-danger' %>
         <%= link_to 'Nuevo Curso', new_course_path(@course), class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;' %>
       <% end %>
       </p>

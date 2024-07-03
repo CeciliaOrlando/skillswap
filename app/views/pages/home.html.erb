@@ -1,3 +1,5 @@
+
+
 <%# banner %>
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="position:relative;" >
@@ -18,14 +20,14 @@
 
       <div class="container align-items-center">
         <p>¡Transforma tu mundo con <strong>Skill Swap!</strong></p>
-        <h1>¡EMPODERATE!</h1>
+        <h1 class="mb-3">¡EMPODÉRATE!</h1>
         <%= link_to "EMPIEZA AHORA", "#", class: "btn btn-flat" %>
       </div>
 
 
       <div class="widget-container d-flex mt-5 p-4 align-items-center ">
 
-        <div class="widget p-5 mt-5">
+        <div class="widget p-5 mt-5 ">
           <div class="d-flex">
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
               <img src="<%= asset_path('team.svg') %>" alt="Idea">
@@ -78,8 +80,8 @@
 
 <div class="container">
   <div class="container-xl">
-    <div class="row justify-content-center text-left">
-      <div class="col-12 col-md-10">
+    <div class="row justify-content-center text-left pe-5">
+      <div class="col-10 col-md-11 mb-4">
         <h2>Cursos destacados</h2>
         <p>Aprendizaje sin límites, más posibilidades</p>
       </div>
@@ -97,7 +99,7 @@
                 <%= render partial: "courses/course", locals: { course: course } %>
               </div>
             <% end %>
-            <%= link_to "VER TODOS", courses_path, class: "btn btn-flat shadow" %>
+            <%= link_to "VER TODOS", courses_path, class: "btn btn-warning shadow" %>
           </div>
         </div>
       </div>
@@ -153,85 +155,3 @@
 </div>
 
 <%# fake container "reviews" %>
-
-<div class="container">
-  <div class="reviews-slider">
-    <%# <div class="reviews-slider__item"> %>
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/736x/3c/e7/fb/3ce7fb4af79d08b5466c3bbfc4075e5d.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">María</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://proxy12.online.ua/news/r3-db568d3331/54b4bf6868f09.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/originals/65/b4/09/65b409ed56136a5e8c7bb4f2eee79612.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/originals/68/4b/95/684b95193fc93aa153895d35ffb92617.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/736x/2f/27/7f/2f277fbfb452c42399ba53c966f868b7.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/736x/f6/f4/56/f6f45646f34efeae61f05c177f76fced.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-    <div class="reviews-slider__item">
-        <a class="reviews-slider__photo-wrapper" href="#">
-          <img src="https://s-media-cache-ak0.pinimg.com/originals/68/4b/95/684b95193fc93aa153895d35ffb92617.jpg" alt="" class="reviews-slider__photo" />
-        </a>
-        <div class="reviews-slider__text">
-          <div class="reviews-slider__message">
-            <p>Nuevo comentario</p>
-          </div>
-          <div class="reviews-slider__author-name">Наталия Хлистунова</div>
-        </div>
-    </div>
-  <%# </div> %>
-</div>
