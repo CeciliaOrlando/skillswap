@@ -1,11 +1,27 @@
 .navbar-small {
   background: #5D3277;
   color: #E0E0E0;
-  font-size: 14px;
+  font-size: 16px;
   padding-left: 20px;
   align-items: center;
-  height: 40px;
+  height: 60px;
   z-index: 10;
+}
+
+.navbar1 .nav-link {
+  color: #E0E0E0;
+}
+.navbar1 .nav-link:hover {
+  color: #FFFFFF;
+}
+.has-search .form-control {
+ // width: 350px;
+  margin-bottom: 3px;
+
+}
+
+.search-bar-small {
+  align-items: end;
 }
 
 .navbar-small .nav-link {
