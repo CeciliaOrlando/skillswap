@@ -2,7 +2,7 @@
   <h2 class="fs-4 text-secondary">CREAR NUEVO EVENTO</h2>
   <div class="event-container mt-5 p-5 shadow border bg-white">
     <div class="row">
-      <div class="col-6">
+      <div class="col-6 p-1 mt-5">
         <img src="https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg" alt="" class="img-fluid" height="700" width="700" >
       </div>
 
@@ -12,6 +12,7 @@
             <%= form.input :event_date, label: 'Fecha', as: :date %>
             <%= form.input :description, label: 'Descripción', as: :text %>
             <%= form.input :price, label: 'Precio' %>
+            <%=  form.input :photo, as: :file, label: 'Photo' %>
             <div class="row">
               <div class="col-9">
                 <%= form.submit 'Crear Evento', class: 'btn btn-flat w-100' %>
