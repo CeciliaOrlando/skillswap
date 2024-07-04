@@ -1,0 +1,6 @@
+<%= turbo_stream.replace @event do %>
+  <%= render @event %>
+  <div class=" justify-content-between ms-2">
+  <%= link_to 'Atrás', events_path, data: { turbo: false }, class: 'btn btn-flat' %>
+</div>
+<% end %>
