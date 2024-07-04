@@ -1,16 +1,16 @@
-<<!-- Button trigger modal -->
+<!-- Button trigger modal -->
 <%#= turbo_frame_tag "test" do %>
 <div class="course-purchase-container p-6 mt-6 mb-5">
   <div class="container d-flex shadow border">
     <div class="row justify-content-center">
-      <div class=" col-sm-6 col-md-4">
+      <div class="col-md-4 mb-4 mt-4 align-items-center">
         <% if params.key?(:course_id) %>
-      <%= image_tag @course.photo, style: "width: 250px", alt: "course_img" %>
+      <%= image_tag @course.photo, class:"w-100", style: "object-fit: cover;", alt: "course_img" %>
      </div>
-      <div class="col-8">
-      <h3 style="color:#5D3277;"><%= @course.name %></h3>
+      <div class="col-8 ps-4 pe-5">
+      <h3 class="pt-3" style="color:#5D3277;"><%= @course.name %></h3>
       <h5 style="color:#F32D6E"><%= @course.category %></h5>
-      <p class="text-justify"><%= @course.description %></p>
+      <p class="text-justify "><%= @course.description %></p>
       <strong><span><%= @course.price %></span></strong>
       <% else %>
         <h3><%= @event.name %></h3>
@@ -21,7 +21,7 @@
         <div class="col-4"></div>
         <div class="col-4"></div>
         <div class="col-4">
-          <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-flat mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Pagar
           </button>
         </div>
