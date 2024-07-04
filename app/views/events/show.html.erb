@@ -1,37 +1,26 @@
 <div class="event-container mt-5">
   <h2 class="fs-4 text-secondary">EVENTO</h2>
-
   <div class="event-container mt-5 p-5 shadow border bg-white">
     <div class="row border d-flex">
       <div class="col-6 mt-4">
-        <%= image_tag @event.photo || "https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&dpr=1", class:"img-fluid", width:"700", height:"700" %>
+        <% if @event.photo.present? %>
+          <%= image_tag @event.photo, class: "img-fluid", width: "700", height: "700" %>
+        <% else %>
+          <%= image_tag "https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&dpr=1", class: "img-fluid", width: "700", height: "700" %>
+        <% end %>
       </div>
-
       <div class="col-6 p-8">
-
-        <%# <%= turbo_frame_tag "test" do %> 
-
-              <p><h1><%= @event.name %></h1>
-              <p><%= @event.description %></p>
-              <p><%= @event.event_date %></p>
-              <p><strong> <%= number_to_currency(@event.price) %></strong></p>
-
-              <%= link_to 'Atrás', events_path, data: {turbo: false}, class: 'btn btn-flat'%>
-
-
-
-              <%= link_to 'Pagar', new_event_purchase_path(@event), data: {turbo_frame: "test"}, class: "btn btn-flat" %>
-
-
-
-            <% if current_user == @event.user %>
-              <%= link_to 'Editar Evento', edit_event_path(@event), data: {turbo_frame: "test"}, class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;'%>
-            <% end %>
-
-
-              <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete,turbo_confirm: 'Estas segura?'}, class: 'btn btn-flat text-white', style: 'background-color: #F32D6E;' if current_user == @event.user %>
-
-        </div>
+        <h1><%= @event.name %></h1>
+        <p><%= @event.description %></p>
+        <p><%= @event.event_date %></p>
+        <p><strong><%= number_to_currency(@event.price) %></strong></p>
+        <%= link_to 'Atrás', events_path, data: { turbo: false }, class: 'btn btn-flat' %>
+        <%= link_to 'Pagar', new_event_purchase_path(@event), data: { turbo_frame: "test" }, class: "btn btn-flat" %>
+        <% if current_user == @event.user %>
+          <%= link_to 'Editar Evento', edit_event_path(@event), data: { turbo_frame: "test" }, class: 'btn btn-flat text-white', style: 'background-color: #A16DB7;' %>
+          <%= link_to 'Borrar Evento', event_path(@event), data: { turbo_method: :delete, turbo_confirm: '¿Estás seguro?' }, class: 'btn btn-flat text-white', style: 'background-color: #F32D6E;' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
