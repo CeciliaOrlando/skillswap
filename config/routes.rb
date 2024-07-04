@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :purchases, only: [:index, :show]
   get "/my_courses", to: "pages#my_courses", as: :my_courses
+  post "/courses/:id/purchases", to: "purchases#create"
 end
