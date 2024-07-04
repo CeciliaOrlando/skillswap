@@ -3,14 +3,14 @@
 <div class="course-purchase-container p-6 mt-6 mb-5">
   <div class="container d-flex shadow border">
     <div class="row justify-content-center">
-      <div class=" col-sm-6 col-md-4">
+      <div class=" col-sm-6 col-md-4  ">
         <% if params.key?(:course_id) %>
-      <%= image_tag @course.photo, style: "width: 250px", alt: "course_img" %>
+      <%= image_tag @course.photo, class: "img-fluid p-2 m", width: "300", height: "250", alt: "course_img" %>
      </div>
       <div class="col-8">
-      <h3 style="color:#5D3277;"><%= @course.name %></h3>
+      <h3 class="mt-4 "style="color:#5D3277;"><%= @course.name %></h3>
       <h5 style="color:#F32D6E"><%= @course.category %></h5>
-      <p class="text-justify"><%= @course.description %></p>
+      <p class="text-justify me-3"><%= @course.description %></p>
       <strong><span><%= @course.price %></span></strong>
       <% else %>
         <h3><%= @event.name %></h3>
