@@ -5,7 +5,7 @@
       <p><%= @course.assessment %></p>
       <div class="d-flex">
         <div class="d-flex">
-          <%= image_tag @course.user.photo, alt: "User photo", class: "avatar me-3", size:"50x50"%>
+          <%= image_tag @course.user.photo, alt: "User photo", class: "avatar me-3", size:"50x50", style:"object-fit: cover;"%>
         <div class=" me-4 d-flex flex-column">
           <p class="mb-0"><small>Profesora</small></p>
           <p><%= @course.user.first_name %> <%= @course.user.last_name %></p>
@@ -24,24 +24,34 @@
       <div class="mt-3 border p-3">
         <h4>Descripción del Curso</h4>
         <hr>
-        <p><%= @course.description %></p>
+        <p ><%= @course.description %></p>
       </div>
       <div class="mt-3 border p-3">
         <h4>Currículum</h4>
         <hr>
-        <p><%= @course.curriculum %></p>
+          <ul>
+            <% @course.curriculum.split("\n").each do |line| %>
+              <% if line =~ /unidad/i %>
+                <li><%= content_tag :b, line %></li>
+              <% elsif line =~ /lecture/i %>
+                <li class="my-2 ms-4"><%= line %></li>
+              <% else %>
+                <li><%= line %></li>
+              <% end %>
+            <% end %>
+          </ul>
       </div>
         <div class="mt-3 border p-3">
           <h4>Profesora</h4>
           <hr>
           <div class="d-flex">
             <div class="d-flex">
-              <%= image_tag @course.user.photo, alt: "User photo", style: "border-radius: 50%;", size:"200x200" %>
+              <%= image_tag @course.user.photo, alt: "User photo", style: "border-radius: 50%; object-fit: cover;", size:"200x200" %>
             </div>
             <div class="ms-5 d-flex flex-column">
               <p class="mb-0"><%= @course.user.first_name %> <%= @course.user.last_name %></p>
               <p class="text-body-secondary"><small>Profesora</small></p>
-              <p><strong>DESCRIPCION QUE FALTA EN LA SEED</strong></p>
+                <p ><%= @course.user.description %></p>
             </div>
           </div>
         </div>

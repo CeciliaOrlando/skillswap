@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @curriculum_lines = @course.curriculum.split("\n")
   end
 
   def new
@@ -45,7 +46,7 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:name, :description, :price)
+    params.require(:course).permit(:name, :description, :price, :category, :curriculum, :photo)
   end
 
   def set_course
