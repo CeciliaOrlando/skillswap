@@ -1,0 +1,15 @@
+.btn-danger {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #fcfcfc;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #F14E84;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #F32D6E;
+  color: #fcfcfc;
+}
