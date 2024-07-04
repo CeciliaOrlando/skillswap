@@ -1,54 +1,76 @@
 <div class="container d-flex justify-content-between">
   <div class="mb-3">
-    <h3 class= "mt-5"><%= @course.name %></h3>
+    <div class="p-3 border text-white" style="background-color: #5D3277; border-radius: 10px;">
+      <h3 class= "mt-2 mb-2"><%= @course.name %></h3>
       <p><%= @course.assessment %></p>
       <div class="d-flex">
         <div class="d-flex">
-            <%= image_tag @course.user.photo, alt: "User photo", class: "avatar me-3", size:"50x50"%>
-          <div class=" me-3 d-flex flex-column">
-            <p class="mb-0"><small>Profesora</small></p>
-            <p><%= @course.user.first_name %> <%= @course.user.last_name %></p>
-          </div>
+          <%= image_tag @course.user.photo, alt: "User photo", class: "avatar me-3", size:"50x50", style:"object-fit: cover;"%>
+        <div class=" me-4 d-flex flex-column">
+          <p class="mb-0"><small>Profesora</small></p>
+          <p><%= @course.user.first_name %> <%= @course.user.last_name %></p>
         </div>
-        <div class="me-3">
-          <p class="mb-0"><small>Categorías</small></p>
-          <p><%= @course.category %></p>
         </div>
-        <div class="me-3">
-          <p class="mb-0"><small>Reviews</small></p>
-          <p><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
+        <div class="me-4">
+        <p class="mb-0"><small>Categoría</small></p>
+        <p><%= @course.category.titleize %></p>
+        </div>
+        <div class="me-4">
+        <p class="mb-0"><small>Reviews</small></p>
+        <p><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
         </div>
       </div>
-      <div class="border p-3">
+    </div>
+      <div class="mt-3 border p-3">
         <h4>Descripción del Curso</h4>
         <hr>
-        <p><%= @course.description %></p>
+        <p ><%= @course.description %></p>
       </div>
       <div class="mt-3 border p-3">
         <h4>Currículum</h4>
         <hr>
-        <p><%= @course.curriculum %></p>
+          <ul>
+            <% @course.curriculum.split("\n").each do |line| %>
+              <% if line =~ /unidad/i %>
+                <li><%= content_tag :b, line %></li>
+              <% elsif line =~ /lecture/i %>
+                <li class="my-2 ms-4"><%= line %></li>
+              <% else %>
+                <li><%= line %></li>
+              <% end %>
+            <% end %>
+          </ul>
       </div>
         <div class="mt-3 border p-3">
           <h4>Profesora</h4>
           <hr>
           <div class="d-flex">
             <div class="d-flex">
-              <%= image_tag @course.user.photo, alt: "User photo", style: "border-radius: 50%;", size:"200x200" %>
+              <%= image_tag @course.user.photo, alt: "User photo", style: "border-radius: 50%; object-fit: cover;", size:"200x200" %>
             </div>
             <div class="ms-5 d-flex flex-column">
               <p class="mb-0"><%= @course.user.first_name %> <%= @course.user.last_name %></p>
               <p class="text-body-secondary"><small>Profesora</small></p>
-              <p><strong>DESCRIPCION QUE FALTA EN LA SEED</strong></p>
+                <p ><%= @course.user.description %></p>
             </div>
           </div>
         </div>
   </div>
   <div class="ms-4">
     <div class="aside_course border p-3">
-      <%= image_tag @course.photo, size: "450x300" %>
+      <%= image_tag @course.photo, size: "450x300", style:"object-fit: cover;" %>
       <h1 class="mt-3 mb-3">$<%= @course.price %></h1>
-      <p class="mt-3 mb-3"><%= link_to "Comprar", new_course_purchase_path(@course), class: "btn btn-flat w-100" %></p>
+      <p class="mt-3 mb-3">
+        <% if current_user %>
+          <% if current_user.courses.include?(@course) %>
+            <p class="w-100 text-white text-center" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">Estás impartiendo este curso.</p>
+          <% elsif current_user.courses_as_student.include?(@course) %>
+            <p class="w-100 text-white text-center" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">¡Ya estás inscrita en este curso!</p>
+          <% else %>
+            <%= link_to 'Inscribirme', new_course_purchase_path(@course), class: "btn btn-flat w-100" %>
+          <% end %>
+        <% end %>
+        </p>
       <h4 class="mt-3 mb-3"><strong>Características del curso</strong></h4>
       <div class="d-flex align-items-center mb-3">
         <i class="fa-solid fa-book-open" style="color: #5D3277;"></i>
@@ -68,7 +90,7 @@
       </div>
       <div class= "d-flex align-items-center mb-3">
         <i class="fa-solid fa-language" style="color: #5D3277;"></i>
-        <p class="ms-4 mb-0"><%= @course.language %></p>
+        <p class="ms-3 mb-0"><%= @course.language %></p>
       </div>
       <div class="d-flex align-items-center mb-3">
         <i class="fa-solid fa-user-graduate" style="color: #5D3277;"></i>
@@ -84,6 +106,19 @@
         </div>
         <hr style="width:30%">
       </div>
+    </div>
+
+    <div class="mt-3">
+      <div class="d-flex justify-content-center">
+        <% if current_user == @course.user %>
+          <%= link_to 'Editar Curso', edit_course_path(@course), class: 'btn btn-flat text-white me-2 w-100', style: 'background-color: #A16DB7;' %>
+          <%= link_to 'Eliminar Curso', course_path(@course), data: { turbo_method: :delete, turbo_confirm: '¿Estás segura?' }, class: 'btn btn-flat text-white w-100', style: 'background-color: #F32D6E;' %>
+        <% end %>
+      </div>
+      <div class="mt-3 d-flex justify-content-center">
+        <%= link_to "Volver a Cursos", courses_path, class: "btn btn-flat w-50" %>
+      </div>
+
     </div>
   </div>
 </div>

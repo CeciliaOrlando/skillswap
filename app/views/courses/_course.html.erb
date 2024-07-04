@@ -1,14 +1,14 @@
-<div class="col-4 mb-4" style="padding: 0 5px;">
+<div class="col-4" style="padding: 0 5px;">
   <div class="card-swap">
     <a href="<%= course_path(course)%>">
-      <%= image_tag course.photo %>
+      <%= image_tag course.photo if course.photo.present? %>
     </a>
     <div class="card-body">
       <h5 class="card-text"><%= link_to course.name, course_path(course), class:"text-decoration-none text-black" %></h5>
       <div class="stats-line"></div>
         <div class="card-stats d-flex justify-content-center ">
           <div class="stats-item pe-5">
-            <i class="fas fa-book-open"></i><p>50</p>
+            <i class="fas fa-book-open"></i><p><%= course.lecture %></p>
           </div>
           <div class="stats-item ">
             <i class="fas fa-dollar-sign"></i><p><%= course.price %></p>
