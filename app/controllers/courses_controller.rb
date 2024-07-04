@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @curriculum_lines = @course.curriculum.split("\n")
+    @curriculum_lines = @course.curriculum.split("\n") if @course.curriculum.present?
   end
 
   def new
@@ -21,6 +21,8 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     @course.user = current_user
+    @course.number_of_student = 0
+    @course.category = params[:course][:category_final] if params[:course][:category_final].present?
     if @course.save
       redirect_to @course, notice: "¡Curso creado exitosamente!"
     else
@@ -46,7 +48,7 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:name, :description, :price, :category, :curriculum, :photo)
+    params.require(:course).permit(:name, :description, :price, :category, :curriculum, :photo, :language, :skill, :duration, :lecture, :quiz, :assessment)
   end
 
   def set_course

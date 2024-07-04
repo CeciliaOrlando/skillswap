@@ -29,17 +29,19 @@
       <div class="mt-3 border p-3">
         <h4>Currículum</h4>
         <hr>
-          <ul>
-            <% @course.curriculum.split("\n").each do |line| %>
-              <% if line =~ /unidad/i %>
-                <li><%= content_tag :b, line %></li>
-              <% elsif line =~ /lecture/i %>
-                <li class="my-2 ms-4"><%= line %></li>
-              <% else %>
-                <li><%= line %></li>
+          <% if @course.curriculum.present? %>
+            <ul>
+              <% @course.curriculum.split("\n").each do |line| %>
+                <% if line =~ /unidad/i %>
+                  <li><%= content_tag :b, line %></li>
+                <% elsif line =~ /lecture/i %>
+                  <li class="my-2 ms-4"><%= line %></li>
+                <% else %>
+                  <li><%= line %></li>
+                <% end %>
               <% end %>
-            <% end %>
-          </ul>
+            </ul>
+          <% end %>
       </div>
         <div class="mt-3 border p-3">
           <h4>Profesora</h4>

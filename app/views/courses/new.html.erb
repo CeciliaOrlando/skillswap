@@ -13,7 +13,14 @@
             <%= f.collection_select :category, Course.select(:category).distinct.pluck(:category).map(&:capitalize), :to_s, :to_s, { prompt: "Seleccione una Categoría" }, { style: 'font-size: 15px; width: 200px; height: 40px;', class: 'mb-2', id: 'course_category' } %><br>
             <%= "En caso de no aparecer la categoría deseada, marca la casilla para añadir una nueva." %>
             <input id="category_check" class="form-check-input me-1 pointer" type="checkbox" name="listGroupRadio" value="" ><br>
-            <%= f.input :category, as: :string, label: 'Añade nueva categoría', label_html: { style: 'font-size: 15px;',  id:'label_category', class: 'd-none' }, input_html: { class: 'mb-2 d-none', id: 'input_category'} %>
+            <%= f.hidden_field :category_final, value: '' %>
+            <%= f.input :curriculum %>
+            <%= f.input :lecture %>
+            <%= f.input :quiz %>
+            <%= f.input :duration %>
+            <%= f.input :skill %>
+            <%= f.input :language %>
+            <%= f.input :assessment %>
             <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
             <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
             <%= f.submit "Crear nuevo curso", class: 'btn btn-flat' %>
@@ -30,19 +37,28 @@ const dropdown_category = document.querySelector('#course_category');
 const category_check = document.getElementById('category_check');
 const input_category = document.getElementById('input_category');
 const label_category = document.getElementById('label_category');
+const hidden_category = document.querySelector('input[name="course[category_final]"]');
 
 category_check.addEventListener('change', (event) => {
   dropdown_category.value = '';
   input_category.value = '';
 
-    if(event.target.checked) {
-      label_category.classList.remove('d-none');
-      input_category.classList.remove('d-none');
-      dropdown_category.disabled = true;
-    } else {
-      label_category.classList.add('d-none');
-      input_category.classList.add('d-none');
-      dropdown_category.disabled = false;
-    }
+  if(event.target.checked) {
+    label_category.classList.remove('d-none');
+    input_category.classList.remove('d-none');
+    dropdown_category.disabled = true;
+  } else {
+    label_category.classList.add('d-none');
+    input_category.classList.add('d-none');
+    dropdown_category.disabled = false;
+  }
+});
+
+document.querySelector('form').addEventListener('submit', (event) => {
+  if (category_check.checked) {
+    hidden_category.value = input_category.value;
+  } else {
+    hidden_category.value = dropdown_category.value;
+  }
 });
 </script>
