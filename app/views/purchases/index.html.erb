@@ -1,12 +1,11 @@
 <div class="d-flex justify-content-center align-items-center">
-  <div class="card card-width container mt-4">
+  <div class="card card-width container mt-5 mb-5">
 <h1>My Purchases</h1>
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>My Cursos</th>
-          <th>My Ventas</th>
-          <th>Mis Profesores</th>
+          <th>Mis Cursos</th>
+          <th>Mis Profesoras</th>
           <th>Precio</th>
         </tr>
       </thead>
@@ -14,7 +13,6 @@
         <% @purchases.each do |purchase| %>
           <tr>
             <td><%= purchase.course.name %></td>
-            <td><%= purchase.course.user.first_name %></td>
             <td><%= purchase.course.user.first_name %> <%= purchase.course.user.last_name %></td>
             <td><%= purchase.course.price %></td>
           </tr>
@@ -25,7 +23,7 @@
     <div class="row">
       <div class="col-8"></div>
       <div class="col-4">
-        <%= link_to "Back to courses", courses_path, class: "btn btn-flat btn-sm text-decoration-none" %>
+        <%= link_to "Back to courses", courses_path, class: "btn btn-flat btn-sm text-decoration-none mb-3" %>
     </div>
 </div>
 </div>
