@@ -3,10 +3,10 @@
       <div class="col-md-4 p-4 bg-white d-flex flex-column justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), ">
         <% if event.event_date.present? %>
           <% months = %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre) %>
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center" style="color: #A16DB7;" >
             <span class="display-1 fw-bold"><%= event.event_date.strftime("%d") %></span>
             <span class="display-6 fw-bold"><%= months[event.event_date.month - 1] %></span>
-            
+
           </div>
         <% end %>
       </div>
@@ -14,7 +14,7 @@
       <div class="col-md-4 p-4 bg-white" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),">
         <div class="d-flex flex-column justify-content-center align-items-center h-100">
             <%= content_tag :div, class: 'section-content text-center text-black' do %>
-              <h2><%= link_to event.name, event_path(event), class: "text-decoration-none text-black" %></h2>
+              <h2><%= link_to event.name, event_path(event), class: "text-decoration-none", style: "color: #F32D6E;" %></h2>
               <p><%= event.description %></p>
               <p class="h3">
                 <span>$</span>

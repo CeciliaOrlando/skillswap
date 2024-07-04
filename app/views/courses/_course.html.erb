@@ -1,7 +1,7 @@
 <div class="col-4" style="padding: 0 5px;">
   <div class="card-swap">
     <a href="<%= course_path(course)%>">
-      <%= image_tag course.photo %>
+      <%= image_tag course.photo if course.photo.present? %>
     </a>
     <div class="card-body">
       <h5 class="card-text"><%= link_to course.name, course_path(course), class:"text-decoration-none text-black" %></h5>

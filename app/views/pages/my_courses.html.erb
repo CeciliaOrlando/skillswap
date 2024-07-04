@@ -2,20 +2,20 @@
   <div class="row justify-content-center">
     <div class="col-8">
       <div class="text-center">
-        <h1 id="home-banner" style="color: #5D3277;"><strong>Mis Cursos</strong></h1>
+        <h1 id="home-banner" class="me-5" style="color: #5D3277;"><strong>Mis Cursos</strong></h1>
       </div>
       <br>
       <% if @courses_as_teacher.any? %>
-        <div class="container text-center">
-          <h2 class="ms-5 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
+        <div class="me-3 text-center">
+          <h2 class="me-3 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
             Cursos que imparto como docente 👩‍🏫
           </h2>
         </div>
         <div class="mycourses-container mt-5">
           <% @courses_as_teacher.each_slice(3) do |course_group| %>
-            <div class="row mb-4">
+            <div class="row row-cols-1 row-cols-md-4">
               <% course_group.each do |course| %>
-                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <div class="ms-4 mb-4 d-flex justify-content-center align-items-center">
                   <%= render partial: "courses/course", locals: { course: course } %>
                 </div>
               <% end %>
@@ -23,15 +23,21 @@
           <% end %>
         </div>
       <% end %>
-
+      
       <% if @courses_as_student.any? %>
-        <h2 class="ms-5 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
-          Cursos en los que estoy inscrita 📚
-        </h2>
-        <div class="row">
-          <% @courses_as_student.each do |course| %>
-            <div class="col-md-3 mb-4 d-flex justify-content-center">
-              <%= render partial: "courses/course", locals: { course: course } %>
+        <div class="me-3 text-center">
+          <h2 class="me-3 text-white w-auto" style="background-color: #A16DB7; padding: 10px; border-radius: 5px;">
+            Cursos en los que estoy inscrita 📚
+          </h2>
+        </div>
+        <div class="mycourses-container mt-5">
+          <% @courses_as_student.each_slice(3) do |course_group| %>
+            <div class="row row-cols-1 row-cols-md-4">
+              <% course_group.each do |course| %>
+                <div class="ms-4 mb-4 d-flex justify-content-center align-items-center">
+                  <%= render partial: "courses/course", locals: { course: course } %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
@@ -49,14 +55,14 @@
           <%= link_to '¡Quiero inscribirme en un curso!', courses_path, class: 'btn btn-flat' %>
         </div>
       <% end %>
-      <div class="text-center mt-5 mb-5">
-        <%= link_to 'Volver a cursos', courses_path, class: 'btn btn-flat me-5' %>
+      <div class="d-flex justify-content-center text-center mt-5 mb-5 me-5">
+        <%= link_to 'Volver a cursos', courses_path, class: 'btn btn-flat me-5 w-25' %>
         <% if @courses_as_teacher.any? %>
-          <%= link_to 'Crear nuevo curso', new_course_path, class: 'btn btn-flat' %>
+          <%= link_to 'Crear nuevo curso', new_course_path, class: 'btn btn-flat w-25', style: 'background-color: #F4A8C1;' %>
         <% end %>
 
         <% if @courses_as_student.any? && @courses_as_teacher.empty? %>
-          <%= link_to '¡Crear tu primer curso!', new_course_path, class: 'btn btn-flat' %>
+          <%= link_to '¡Crea tu primer curso!', new_course_path, class: 'btn btn-flat w-25', style: 'background-color: #F4A8C1;' %>
         <% end %>
       </div>
     </div>
