@@ -1,16 +1,16 @@
-<!-- Button trigger modal -->
-<%= turbo_frame_tag "test" do %>
+<<!-- Button trigger modal -->
+<%#= turbo_frame_tag "test" do %>
 <div class="course-purchase-container p-6 mt-6 mb-5">
   <div class="container d-flex shadow border">
     <div class="row justify-content-center">
-      <div class=" col-sm-6 col-md-4  ">
+      <div class=" col-sm-6 col-md-4">
         <% if params.key?(:course_id) %>
-      <%= image_tag @course.photo, class: "img-fluid p-2 m", width: "300", height: "250", alt: "course_img" %>
+      <%= image_tag @course.photo, style: "width: 250px", alt: "course_img" %>
      </div>
       <div class="col-8">
-      <h3 class="mt-4 "style="color:#5D3277;"><%= @course.name %></h3>
+      <h3 style="color:#5D3277;"><%= @course.name %></h3>
       <h5 style="color:#F32D6E"><%= @course.category %></h5>
-      <p class="text-justify me-3"><%= @course.description %></p>
+      <p class="text-justify"><%= @course.description %></p>
       <strong><span><%= @course.price %></span></strong>
       <% else %>
         <h3><%= @event.name %></h3>
@@ -74,7 +74,7 @@
                             <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
                             <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
                             <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
-                            <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
+                            <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9      " />
                         </g>
                         <g id="cchip">
                             <g>
@@ -185,4 +185,19 @@
   </div>
 </div>
 <!-- FIN Modal -->
-<% end%>
+<%# end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

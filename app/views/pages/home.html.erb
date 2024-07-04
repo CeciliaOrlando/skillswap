@@ -1,7 +1,4 @@
-
-
 <%# banner %>
-
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="position:relative;" >
   <div class="carousel-inner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
     <div class="carousel-item active img-overlay">
@@ -16,17 +13,13 @@
   </div>
   <div class="container p-5">
     <div class="banner-home" id="home-banner">
-    <%= turbo_frame_tag "login"%> <!--login modal-->
-
+    <%#= turbo_frame_tag "login"%> <!--login modal-->
       <div class="container align-items-center">
         <p>¡Transforma tu mundo con <strong>Skill Swap!</strong></p>
         <h1 class="mb-3">¡EMPODÉRATE!</h1>
         <%= link_to "EMPIEZA AHORA", "#", class: "btn btn-flat" %>
       </div>
-
-
       <div class="widget-container d-flex mt-5 p-4 align-items-center ">
-
         <div class="widget p-5 mt-5 ">
           <div class="d-flex">
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
@@ -38,7 +31,6 @@
             </div>
           </div>
         </div>
-
        <div class="widget p-5 mt-5">
           <div class="d-flex">
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
@@ -50,7 +42,6 @@
             </div>
           </div>
         </div>
-
         <div class="widget p-5 mt-5">
           <div class="d-flex">
             <div class="flex-shrink-0" style="width:80px; height:80px; margin-right:10px;">
@@ -74,10 +65,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-
 <%# cards container %>
-
 <div class="container">
   <div class="container-xl">
     <div class="row justify-content-center text-left pe-5">
@@ -87,8 +75,6 @@
       </div>
     </div>
   </div>
-
-
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -120,11 +106,7 @@
     </button>
 </div>
 </div>
-
-
-
 <%# fake container "register now" %>
-
 <div class="d-flex align-items-center">
   <div class="register-container banner-home" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('banner_01.jpg') %>); display: flex;">
     <div class="container">
@@ -135,7 +117,6 @@
         </div>
       </div>
     </div>
-
     <div class="container rounded">
       <form style="width: 75%;" class="p-5">
       <h3>Crea tu cuenta gratis ahora y obtén acceso a miles de cursos en línea.</h3>
@@ -153,5 +134,4 @@
     </div>
   </div>
 </div>
-
 <%# fake container "reviews" %>
