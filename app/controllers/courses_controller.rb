@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to courses_path
+      redirect_to @course, notice: "¡Curso actualizado exitosamente!"
     else
       render :edit, status: :unprocessable_entity
     end
