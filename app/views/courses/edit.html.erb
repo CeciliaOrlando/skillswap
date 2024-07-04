@@ -6,13 +6,16 @@
       </div>
       <div class="col-md-7">
         <h3 class="text-center">Edita tu curso</h3>
-        <%= simple_form_for @course, url: course_path(@course) do |f| %>
-          <%= f.input :name, label: 'Nombre del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
-          <%= f.input :description, label: 'Descripción', label_html: { style: 'font-size: 15px;' }, as: :text, input_html: { class: 'mb-2', style: 'height: 180px;' } %>
-          <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
-          <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
-          <%= f.submit "Actualizar Curso", class: 'btn btn-flat' %>
-        <% end %>
+        <p>
+          <%= simple_form_for @course, url: course_path(@course) do |f| %>
+            <%= f.input :name, label: 'Nombre del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.input :description, label: 'Descripción', label_html: { style: 'font-size: 15px;' }, as: :text, input_html: { class: 'mb-2', style: 'height: 180px;' } %>
+            <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.submit "Actualizar Curso", class: 'btn btn-flat' %>
+          <% end %>
+        </p>
+        <p><%= link_to "Atrás", :back, class: "btn btn-flat w-100 text-white", style: 'background-color: #A16DB7;' %></p>
       </div>
     </div>
   </div>

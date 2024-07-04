@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @curriculum_lines = @course.curriculum.split("\n")
   end
 
   def new
@@ -32,7 +33,7 @@ class CoursesController < ApplicationController
 
   def update
     if @course.update(course_params)
-      redirect_to courses_path
+      redirect_to @course, notice: "¡Curso actualizado exitosamente!"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +46,7 @@ class CoursesController < ApplicationController
 
   private
   def course_params
-    params.require(:course).permit(:name, :description, :price)
+    params.require(:course).permit(:name, :description, :price, :category, :curriculum, :photo)
   end
 
   def set_course
