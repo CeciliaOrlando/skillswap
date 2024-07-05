@@ -103,8 +103,8 @@
                   <%= image_tag(course.photo, alt: course.name, class: "last-courses-image") %>
                 </a>
               </div>
-              <div class="col-9"> <!-- Ajusta el ancho de la columna del texto -->
-                <a class="ms-3 text-decoration-none text-black" href="<%= course_path(course) %>"><strong><%= course.name %></strong></a>
+              <div class="col-9 p-1"> <!-- Ajusta el ancho de la columna del texto -->
+                <a class="ms-3 text-decoration-none text-black text-center" href="<%= course_path(course) %>"><strong><%= course.name %></strong></a>
                 <br>
                 <a class="ms-3 text-decoration-none text-black" href="<%= course_path(course) %>"><strong><%= course.price %></strong></a>
               </div>

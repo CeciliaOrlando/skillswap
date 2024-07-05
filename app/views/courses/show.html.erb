@@ -17,7 +17,11 @@
         </div>
         <div class="me-4">
         <p class="mb-0"><small>Reviews</small></p>
-        <p><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
+          <% if @course.number_of_student == 0 %>
+            <p><%= raw '<i class="fa-regular fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
+          <% else %>
+            <p><%= raw '<i class="fa-solid fa-star" style="color: #FFD43B;"></i>' * 5 %></p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -29,17 +33,19 @@
       <div class="mt-3 border p-3">
         <h4>Currículum</h4>
         <hr>
-          <ul>
-            <% @course.curriculum.split("\n").each do |line| %>
-              <% if line =~ /unidad/i %>
-                <li><%= content_tag :b, line %></li>
-              <% elsif line =~ /lecture/i %>
-                <li class="my-2 ms-4"><%= line %></li>
-              <% else %>
-                <li><%= line %></li>
+          <% if @course.curriculum.present? %>
+            <ul>
+              <% @course.curriculum.split("\n").each do |line| %>
+                <% if line =~ /unidad/i %>
+                  <li><%= content_tag :b, line %></li>
+                <% elsif line =~ /lecture/i %>
+                  <li class="my-2 ms-4"><%= line %></li>
+                <% else %>
+                  <li><%= line %></li>
+                <% end %>
               <% end %>
-            <% end %>
-          </ul>
+            </ul>
+          <% end %>
       </div>
         <div class="mt-3 border p-3">
           <h4>Profesora</h4>
@@ -59,7 +65,11 @@
   <div class="ms-4">
     <div class="aside_course border p-3">
       <%= image_tag @course.photo, size: "450x300", style:"object-fit: cover;" %>
-      <h1 class="mt-3 mb-3">$<%= @course.price %></h1>
+      <% if @course.price == 0 %>
+        <h1 class="mt-3 mb-3 text-center">¡Este curso es gratis!</h1>
+      <% else %>
+        <h1 class="mt-3 mb-3">$<%= @course.price %></h1>
+      <% end %>
       <p class="mt-3 mb-3">
         <% if current_user %>
           <% if current_user.courses.include?(@course) %>
@@ -82,7 +92,7 @@
       </div>
       <div class= "d-flex align-items-center mb-3">
         <i class="fa-regular fa-clock" style="color: #5D3277;"></i>
-        <p class="ms-4 mb-0"><%= @course.duration.titleize %></p>
+        <p class="ms-4 mb-0"><%= @course.duration.titleize %> Semanas</p>
             </div>
       <div class= "d-flex align-items-center mb-3">
         <i class="fa-solid fa-arrow-turn-up" style="color: #5D3277;"></i>
