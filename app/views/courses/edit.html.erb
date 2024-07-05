@@ -2,17 +2,38 @@
   <div class="mb-5 p-3 shadow border bg-white">
     <div class="row">
       <div class="col-md-5 d-flex justify-content-center align-items-center" style="min-height: 100%;">
-        <%= image_tag @course.photo, alt: "course_image_cap", style: "width: 500px; height: 600px; object-fit: cover;" %>
+        <%= image_tag @course.photo, alt: "course_image_cap", style: "width: 100%; height: 100%; object-fit: cover;" %>
       </div>
       <div class="col-md-7">
         <h3 class="text-center">Edita tu curso</h3>
         <p>
-          <%= simple_form_for @course, url: course_path(@course) do |f| %>
+          <%= simple_form_for @course, url: courses_path do |f| %>
             <%= f.input :name, label: 'Nombre del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
-            <%= f.input :description, label: 'Descripción', label_html: { style: 'font-size: 15px;' }, as: :text, input_html: { class: 'mb-2', style: 'height: 180px;' } %>
+            <%= f.input :assessment, label: 'Bajada de título', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' }  %>
+            <%= f.collection_select :category, Course.select(:category).distinct.pluck(:category).map(&:capitalize), :to_s, :to_s, { prompt: "Seleccione una Categoría" }, { style: 'font-size: 15px; width: 200px; height: 40px;', class: 'mb-2', id: 'course_category' } %><br>
+            <%= "En caso de no aparecer la categoría deseada, marca la casilla para añadir una nueva." %>
+            <input id="category_check" class="form-check-input me-1 pointer" type="checkbox" name="listGroupRadio" value="" ><br>
+            <%= f.hidden_field :category_final, value: '' %>
+            <%= f.input :description, label: 'Descripción del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+            <%= f.input :curriculum, label: 'Currículum del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' }%>
+            <div class="row">
+              <div class="col-md-4">
+                <%= f.input :lecture, label: 'Cantidad de Lectures', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :quiz, label: 'Cantidad de Quizzez', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+              </div>
+              <div class="col-md-4">
+                <%= f.input :duration, label: 'Duración en semanas del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6"><%= f.input :skill, label: 'Habilidades', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %></div>
+              <div class="col-md-6"><%= f.input :language, label: 'Lenguaje', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %></div>
+            </div>
             <%= f.input :price, label: 'Precio', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
             <%= f.input :photo, as: :file, label: 'Imagen del curso', label_html: { style: 'font-size: 15px;' }, input_html: { class: 'mb-2' } %>
-            <%= f.submit "Actualizar Curso", class: 'btn btn-flat' %>
+            <%= f.submit "Actualizar", class: 'btn btn-flat' %>
           <% end %>
         </p>
         <p><%= link_to "Atrás", :back, class: "btn btn-flat w-100 text-white", style: 'background-color: #A16DB7;' %></p>

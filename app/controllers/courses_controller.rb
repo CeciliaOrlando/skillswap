@@ -4,9 +4,9 @@ class CoursesController < ApplicationController
 
   def index
     if params[:query].present?
-      @courses = Course.search_courses(params[:query])
+      @courses = Course.search_courses(params[:query]).order(created_at: :desc)
     else
-      @courses = Course.all
+      @courses = Course.order(created_at: :desc)
     end
   end
 
